@@ -4,13 +4,13 @@
 // ******************************************************************************
 // *** Dependencies
 // =============================================================
-var express = require("express");
-var express = require("express");
+const express = require("express");
+const express = require("express");
 
 // Sets up the Express App
 // =============================================================
-var app = express();
-var PORT = process.env.PORT || 8080;
+const app = express();
+const PORT = process.env.PORT || 8080;
 
 // Requiring our models for syncing
 var db = require("./models");
@@ -20,7 +20,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static(path.join(__dirname, "/public")));
 
 // Routes
 // =============================================================
