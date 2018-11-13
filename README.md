@@ -11,5 +11,8 @@ Sprint-2: Have table updated with more and filterable with searech function, Mat
 
 4. Mark: Theme and front end things. Ritika and James have started on the database end.
 
+Coding is fun and stuff yadayada
+
+
 
 
