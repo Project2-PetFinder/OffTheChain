@@ -1,7 +1,12 @@
 # Production
 
-Hey group let's define everything for this project
+1. Value Add
 
-Value Add
-MVP
-Tech Stack
+2. MVP
+
+3. Tech Stack
+
+4. Roles of members in the team based on what people WANT to work on.
+
+
+
