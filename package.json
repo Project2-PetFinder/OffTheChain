@@ -1,0 +1,24 @@
+{
+  "name": "offthechain",
+  "version": "1.0.0",
+  "description": "1. Off the Chain: Helping you reconnect with your lost beloved furry friends. This application will let you post notices showing where you may have lost your pet, or allow you to post if you have found a companion who happened to lose their way. Using map data as well as pins, you can drop last known locations of your pet, or drop where pets were found allowing you to easily see where they were found.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Project2-PetFinder/OffTheChain.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Project2-PetFinder/OffTheChain/issues"
+  },
+  "homepage": "https://github.com/Project2-PetFinder/OffTheChain#readme",
+  "dependencies": {
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.2"
+  }
+}
