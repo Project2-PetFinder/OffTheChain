@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Sequelize) {
-    var found_pets = sequelize.define("found_pet", {
+    var foundPet = sequelize.define("foundPet", {
       animal_ID: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -53,4 +53,5 @@ module.exports = function(sequelize, Sequelize) {
         len: [1]
       }
     });
-return found_pets}
+return foundPet
+}
