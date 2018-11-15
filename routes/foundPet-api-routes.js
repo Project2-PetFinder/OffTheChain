@@ -2,8 +2,6 @@ var db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/pets", function(req, res) {
-    console.log(db.foundPet)
-      console.log(db.found_petss)
     // 1. Add a join to include all of each Author's Posts
     db.foundPet.findAll({}).then(function(dbfound_pets) {
       res.json(dbfound_pets);
