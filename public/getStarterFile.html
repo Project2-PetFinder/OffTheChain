@@ -59,7 +59,7 @@ var doggyIcon = L.icon({
            let mapPoint= data[i].found_location.split(',')
            let mapPointParsed= [parseFloat(mapPoint[0]),parseFloat(mapPoint[1])]
 			marker = new L.marker(mapPointParsed)
-				.bindPopup(data.animal_ID[i])
+				.bindPopup(data[i].animal_ID)
 				.addTo(mymap);
     }});
     
