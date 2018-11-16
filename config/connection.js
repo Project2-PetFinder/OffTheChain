@@ -9,7 +9,6 @@ if (process.env.JAWSDB_URL) {
     // MYSQL connection
     connection = mysql.createConnection({
         host: "localhost",
-        port: 8889,
         user: "root",
         password: "root",
         database: "PetSearch"
