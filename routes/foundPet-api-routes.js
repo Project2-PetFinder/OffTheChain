@@ -21,7 +21,19 @@ module.exports = function(app) {
   });
 
   app.post("/api/pets", function(req, res) {
-    db.foundPet.create(req.body).then(function(dbfound_pets) {
+    db.foundPet.create({
+      "animal_ID": 581340,
+      "name": "Fluffy",
+      "found_location": "30.404569, -97.727315",
+      "at_AAC": "No (contact for more info)",
+      "intake_date": "0000-00-00",
+      "type": "Dog",
+      "looks_like": "Catahoula/Labrador Retriever",
+      "color": "Blue Merle/White",
+      "sex": "Spayed Female",
+      "age": "9 years",
+      "image_link": "http://www.petharbor.com/pet.asp?uaid=ASTN.A581340",
+      }).then(function(dbfound_pets) {
       res.json(dbfound_pets);
     });
   });
