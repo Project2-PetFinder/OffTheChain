@@ -8,7 +8,7 @@ $(document).ready(function () {
             if (!scrollContainer) return;
             scrollContainer.scrollTop += 1;
         } while (scrollContainer.scrollTop == 0);
-        var targetY = -300;
+        var targetY = -430;
         do { //find the top of target relatively to the container
             if (target == scrollContainer) break;
             targetY += target.offsetTop - 18;

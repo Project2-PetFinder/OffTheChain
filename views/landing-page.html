@@ -23,138 +23,145 @@
   <link href="../public/assets/css/material-kit.css?v=2.0.4" rel="stylesheet">
 </head>
 
-  <body class="landing-page sidebar-collapse">
-    <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
-      <div class="container">
-        <div class="navbar-translate">
-          <a class="navbar-brand" href="https://demos.creative-tim.com/material-kit/index.html">Off The Chain</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse">
-          <ul class="navbar-nav ml-auto">
-            <li class="dropdown nav-item">
-              <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                <i class="material-icons">reorder</i> Content
+<!-- Header -->
+<body class="landing-page sidebar-collapse">
+  <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="https://demos.creative-tim.com/material-kit/index.html">Off The Chain</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="dropdown nav-item">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+              <i class="material-icons">reorder</i> Content
+            </a>
+            <div class="dropdown-menu dropdown-with-icons">
+              <a href="../team.html" class="dropdown-item">
+                <i class="material-icons">info</i> About Us
               </a>
-              <div class="dropdown-menu dropdown-with-icons">
-                <a href="../team.html" class="dropdown-item">
-                  <i class="material-icons">info</i> About Us
-                </a>
-                <a href="https://demos.creative-tim.com/material-kit/docs/2.0/getting-started/introduction.html" class="dropdown-item">
-                  <i class="material-icons">content_paste</i> Documentation
-                </a>
-              </div>
-            </li>
-          </ul>
+              <a href="https://demos.creative-tim.com/material-kit/docs/2.0/getting-started/introduction.html" class="dropdown-item">
+                <i class="material-icons">content_paste</i> Documentation
+              </a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!--Background-->
+  <div class="page-header header-filter" data-parallax="true" style="background-image: url('../public/assets/img/catDog.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="title">Don't Stress. We'll find your pet.</h1>
+          <h4>One of the worst feelings is losing a pet. Not knowing if your pet is safe can be one of the most helpless feelings out there. Luckily, we are here to help. </h4>
+          <br>
+          <button class="btn btn-primary btn-raised btn-lg" onclick="smoothScroll(document.getElementById('first'))">
+            <i class="fas fa-paw"></i>  Continue
+          </button> 
         </div>
       </div>
-    </nav>
-    <div class="page-header header-filter" data-parallax="true" style="background-image: url('../public/assets/img/catDog.jpg')">
-      <div class="container">
+    </div>
+  </div>
+
+  <!--Main Container-->
+  <div class="main main-raised">
+    <div class="container">
+      <div class="section text-center">
         <div class="row">
-          <div class="col-md-6">
-            <h1 class="title">Don't Stress. We'll find your pet.</h1>
-            <h4>One of the worst feelings is losing a pet. Not knowing if your pet is safe can be one of the most helpless feelings out there. Luckily, we are here to help. </h4>
-            <br>
-            <button class="btn btn-primary btn-raised btn-lg" onclick="smoothScroll(document.getElementById('first'))">
-              <i class="fas fa-paw"></i>  Continue
-            </button> 
+          <div class="col-md-8 ml-auto mr-auto">
+            <h2 class="title">Let&apos;s talk product</h2>
+            <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn&apos;t scroll to get here. Add a button if you want the user to see more.</h5>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="main main-raised">
-      <div class="container">
-        <div class="section text-center">
+        <div class="features">
           <div class="row">
-            <div class="col-md-8 ml-auto mr-auto">
-              <h2 class="title">Let&apos;s talk product</h2>
-              <h5 class="description">This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn&apos;t scroll to get here. Add a button if you want the user to see more.</h5>
+            <div class="col-md-4">
+              <div class="info">
+                <div class="icon icon-info">
+                  <i class="material-icons"></i>
+                </div>
+                  <h4 class="info-title">Lost a pet</h4>
+                  <p>Complete a detailed form about your lost pet. The information provided will be posted to the database and will also display any potential matches already in the database</p>
+                  <a href="lost.html" target="_blank" class="btn btn-primary btn-raised btn-lg" id="first">
+                    <i class="fas fa-paw"></i>  Lost
+                  </a>
+              </div>
             </div>
-          </div>
-          <div class="features">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="info">
-                  <div class="icon icon-info">
-                    <i class="material-icons"></i>
-                  </div>
-                    <h4 class="info-title">Lost a pet</h4>
-                    <p>Complete a detailed form about your lost pet. The information provided will be posted to the database and will also display any potential matches already in the database</p>
-                    <a href="lost.html" target="_blank" class="btn btn-primary btn-raised btn-lg" id="first">
-                      <i class="fas fa-paw"></i>  Lost
-                    </a>
+            <div class="col-md-4">
+              <div class="info">
+                <div class="icon icon-success">
+                  <i class="material-icons"></i>
                 </div>
+                  <h4 class="info-title">Found a pet</h4>
+                  <p>Have you found a pet? Enter the animal's criteria into the database and  </p>
+                  <a href="https://" target="_blank" class="btn btn-primary btn-raised btn-lg">
+                    <i class="fas fa-paw"></i>  Found
+                  </a>
               </div>
-              <div class="col-md-4">
-                <div class="info">
-                  <div class="icon icon-success">
-                    <i class="material-icons"></i>
-                  </div>
-                    <h4 class="info-title">Found a pet</h4>
-                    <p>Have you found a pet? Enter the animal's criteria into the database and  </p>
-                    <a href="https://" target="_blank" class="btn btn-primary btn-raised btn-lg">
-                      <i class="fas fa-paw"></i>  Found
-                    </a>
+            </div>
+            <div class="col-md-4">
+              <div class="info">
+                <div class="icon icon-danger">
+                  <i class="material-icons"></i>
                 </div>
-              </div>
-              <div class="col-md-4">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <i class="material-icons"></i>
-                  </div>
-                    <h4 class="info-title">Search All Lost and Found</h4>
-                    <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
-                    <a href="https://" target="_blank" class="btn btn-primary btn-raised btn-lg">
-                      <i class="fas fa-paw"></i>  Search  
-                    </a>
-                </div>
+                  <h4 class="info-title">Search All Lost and Found</h4>
+                  <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                  <a href="https://" target="_blank" class="btn btn-primary btn-raised btn-lg">
+                    <i class="fas fa-paw"></i>  Search  
+                  </a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <footer class="footer footer-default">
-      <div class="container">
-        <nav class="float-left">
-          <ul>
-            <li>
-              <a href="https://github.com/Project2-PetFinder/OffTheChain">
-                GitHub
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="copyright float-right">
-          &copy;
-          <script>
-            document.write(new Date().getFullYear())
-          </script>, made with <i class="material-icons">favorite</i> by
-          <a href="https://github.com/Project2-PetFinder/OffTheChain" target="_blank">OffTheChain</a> for pet lover's everwhere.
-        </div>
+  </div>
+
+  <!--Footer-->
+  <footer class="footer footer-default">
+    <div class="container">
+      <nav class="float-left">
+        <ul>
+          <li>
+            <a href="https://github.com/Project2-PetFinder/OffTheChain">
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="copyright float-right">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear())
+        </script>, made with <i class="material-icons">favorite</i> by
+        <a href="https://github.com/Project2-PetFinder/OffTheChain" target="_blank">OffTheChain</a> for pet lover's everwhere.
       </div>
-    </footer>
-  
-    <!--   Core JS Files   -->
-    <script src="../public/assets/js/core/jquery.min.js" type="text/javascript"></script>
-    <script src="../public/assets/js/core/popper.min.js" type="text/javascript"></script>
-    <script src="../public/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-    <script src="../public/assets/js/plugins/moment.min.js"></script>
-    <script src="../public/assets/js/script.js"></script>
-    <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
-    <script src="../public/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
-    <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-    <script src="../public/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
-    <!--	Plugin for Sharrre btn -->
-    <script src="../public/assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
-    <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
-    <script src="../public/assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
-  </body>
+    </div>
+  </footer>
+
+  <!--   Core JS Files   -->
+  <script src="../public/assets/js/core/jquery.min.js" type="text/javascript"></script>
+  <script src="../public/assets/js/core/popper.min.js" type="text/javascript"></script>
+  <script src="../public/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
+  <script src="../public/assets/js/plugins/moment.min.js"></script>
+  <script src="../public/assets/js/script.js"></script>
+  <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+  <script src="../public/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="../public/assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
+  <!--	Plugin for Sharrre btn -->
+  <script src="../public/assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
+  <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+  <script src="../public/assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+</body>
 
 </html>
