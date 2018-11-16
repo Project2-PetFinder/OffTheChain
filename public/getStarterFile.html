@@ -52,7 +52,7 @@ var doggyIcon = L.icon({
       accessToken: 'pk.eyJ1IjoiamN0b2JleSIsImEiOiJjam9kNGs3MzMwczI2M3BwYjVtaXRpZ2l1In0.sxKzZ76nyy_PN8ETEnoKKA'
     }).addTo(mymap);
 
-     $.get("/api/survey", 
+     $.get("/api/pets", 
         function(data) {
             console.log(data)
           for (var i = 0; i < data.length; i++) {
