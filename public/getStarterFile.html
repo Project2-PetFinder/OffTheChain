@@ -56,7 +56,9 @@ var doggyIcon = L.icon({
         function(data) {
             console.log(data)
           for (var i = 0; i < data.length; i++) {
-			marker = new L.marker(parseFloat(data.found_location[i]))
+           let mapPoint= data[i].found_location.split(',')
+           let mapPointParsed= [parseFloat(mapPoint[0]),parseFloat(mapPoint[1])]
+			marker = new L.marker(mapPointParsed)
 				.bindPopup(data.animal_ID[i])
 				.addTo(mymap);
     }});
