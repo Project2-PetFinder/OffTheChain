@@ -4,7 +4,6 @@ CREATE DATABASE PetSearch;;
 USE PetSearch;;
 
 CREATE TABLE `lostpets` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
   `Animal_ID` varchar(30) NOT NULL,
   `Lost_location` varchar(255) NOT NULL,
   `AAC` varchar(30) NOT NULL,
@@ -15,13 +14,13 @@ CREATE TABLE `lostpets` (
   `Sex` varchar(30) NOT NULL,
   `Age` varchar(30) NOT NULL,
   `image_Link` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`,'Animal_ID')
+  PRIMARY KEY (`Animal_ID`)
 )
+SELECT * FROM lostpets;
 
 DROP TABLE IF EXISTS `Foundpets`;
 
 CREATE TABLE `Foundpets` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
   `Animal_ID` varchar(30) NOT NULL,
   `Found_location` varchar(255) NOT NULL,
   `AAC` varchar(30) NOT NULL,
@@ -32,7 +31,7 @@ CREATE TABLE `Foundpets` (
   `Sex` varchar(30) NOT NULL,
   `Age` varchar(30) NOT NULL,
   `image_Link` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`,'Animal_ID')
-)
+  PRIMARY KEY (`Animal_ID`)
+  )
 
 
