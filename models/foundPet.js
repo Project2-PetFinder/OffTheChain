@@ -23,15 +23,15 @@ module.exports = function(sequelize, Sequelize) {
         allowNull: false,
         len: [1]
       },
-      type: {
-        type:Sequelize.STRING,
-        allowNull: false,
-        len: [1]
-      },
       looks_like: {
           type:Sequelize.STRING,
           allowNull: false,
           len:[1]
+      },
+      type: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        len: [1]
       },
       color: {
         type:Sequelize.STRING,

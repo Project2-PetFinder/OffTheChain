@@ -1,5 +1,5 @@
 module.exports = function(sequelize, Sequelize) {
-    var lost_pets = sequelize.define("lost_pet", {
+    var lostPet = sequelize.define("lostPet", {
       animal_ID: {
         type: Sequelize.INTEGER,
         allowNull: false,
@@ -8,28 +8,13 @@ module.exports = function(sequelize, Sequelize) {
       name: {
         type: Sequelize.STRING,
       },
-      found_location: {
+      lost_location: {
         type: Sequelize.STRING,
         allowNull: false,
         len: [1]
       },
-      found_location: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        len: [1]
-      },
-      at_AAC: {
-        type:Sequelize.STRING,
-        allowNull: false,
-        len: [1]
-      },
-      intake_date: {
+      lost_date: {
         type:Sequelize.DATEONLY,
-        allowNull: false,
-        len: [1]
-      },
-      type: {
-        type:Sequelize.STRING,
         allowNull: false,
         len: [1]
       },
@@ -37,6 +22,11 @@ module.exports = function(sequelize, Sequelize) {
           type:Sequelize.STRING,
           allowNull: false,
           len:[1]
+      },
+      type: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        len: [1]
       },
       color: {
         type:Sequelize.STRING,
@@ -58,4 +48,4 @@ module.exports = function(sequelize, Sequelize) {
         len: [1]
       }
     });
-return lost_pets}
+return lostPet}
