@@ -25,6 +25,7 @@ $(document).ready(function () {
         scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
     };
 
+
     //Generate Map
     var kittayIcon = L.icon({
         iconUrl: '../public/assets/img/kittay.png', //"public/assets/img/kittay.png",
