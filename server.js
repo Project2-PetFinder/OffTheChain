@@ -21,6 +21,8 @@ app.use(express.json());
 // Static directory
 app.use(express.static("public"));
 
+// ~/public './route/to/find.json'
+
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app)
