@@ -66,9 +66,20 @@ var doggyIcon = L.icon({
         marker = new L.marker(mapPointParsed), {icon:kittayIcon}
 				.bindPopup(data[i].animal_ID)
         .addTo(mymap);}
-        
+
     }});
-    
+
+    function onMapClick(e) {
+      
+      marker.bindPopup(popupContent).openPopup();
+
+           
+       
+
+
+    }
+
+    mymap.on('click', onMapClick);
     
     
 
