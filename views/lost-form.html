@@ -16,6 +16,9 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
   <!-- CSS Files -->
   <link href="../public/assets/css/material-kit.css?v=2.0.4" rel="stylesheet">
@@ -42,8 +45,11 @@
               <i class="material-icons">reorder</i> Content
             </a>
             <div class="dropdown-menu dropdown-with-icons">
-              <a href="../index.html" class="dropdown-item">
+              <a href="../views/team.html" class="dropdown-item">
                 <i class="material-icons">info</i> About Us
+              </a>
+              <a href="../views/lost-form.html" class="dropdown-item">
+                <i class="material-icons">info</i> Lost Pet?
               </a>
               <a href="https://demos.creative-tim.com/material-kit/docs/2.0/getting-started/introduction.html" class="dropdown-item">
                 <i class="material-icons">content_paste</i> Documentation
@@ -54,6 +60,22 @@
       </div>
     </div>
   </nav>
+
+  <!--Background-->
+  <div class="page-header header-filter" data-parallax="true" style="background-image: url('../public/assets/img/lostPage.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="title">Lost your pet?</h1>
+          <h4> Fill out the customized form and we'll do the rest.</h4>
+          <br>
+          <button class="btn btn-primary btn-raised btn-lg" onclick="smoothScroll(document.getElementById('first'))">
+              <i class="fas fa-angle-down"></i>  Continue
+          </button> 
+        </div>
+      </div>
+    </div>
+  </div>
   
   <!-- Main Container-->
   <div class="main main-raised">
@@ -152,8 +174,8 @@
           
                       <div class="row">
                         <div class="col-md-4 ml-auto mr-auto text-center">
-                          <button class="btn btn-primary btn-raised">
-                            Submit
+                          <button class="btn btn-primary btn-raised" id="first">
+                            Continue
                           </button><!--Dog Submit-->
                         </div>
                       </div>
@@ -222,8 +244,8 @@
           
                       <div class="row">
                         <div class="col-md-4 ml-auto mr-auto text-center">
-                          <button class="btn btn-primary btn-raised">
-                            Submit
+                          <button class="btn btn-primary btn-raised" id="first">
+                            Continue
                           </button>
                         </div>
                       </div>
@@ -265,6 +287,7 @@
   <script src="../public/assets/js/core/popper.min.js" type="text/javascript"></script>
   <script src="../public/assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
   <script src="../public/assets/js/plugins/moment.min.js"></script>
+  <script src="../public/assets/js/script.js"></script>
   <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
   <script src="../public/assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
   <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
