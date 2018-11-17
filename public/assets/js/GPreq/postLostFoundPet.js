@@ -32,6 +32,8 @@ $(document).ready(function () {
           accessToken: 'pk.eyJ1IjoiamN0b2JleSIsImEiOiJjam9kNGs3MzMwczI2M3BwYjVtaXRpZ2l1In0.sxKzZ76nyy_PN8ETEnoKKA'
         }).addTo(mymap);
         var Address=[]
+        var clickedPoint=""
+        
         function onMapClick(e) {
           
           if(Address.length>0){
@@ -41,6 +43,7 @@ $(document).ready(function () {
           lat = e.latlng.lat;
           lng = e.latlng.lng;
           clickedPoint = [lat, lng]
+         
           clickedPointString = clickedPoint.toString();
           //AJAX request to convert lat/lng to address for tooltip
           const searchAddress = address => {
@@ -61,6 +64,7 @@ $(document).ready(function () {
           searchAddress()
         }
         mymap.on('click', onMapClick);
+       
         var foundPet = {
           name: $(".dog-name").val().trim(),
           found_location:clickedPoint,
@@ -74,6 +78,7 @@ $(document).ready(function () {
           image_link: $(".picture").val(),
       };
       $(".submit").on("click", function (event) {
+        console.log(clickedPoint)
         $.post("/api/pets", foundPet,
         function(data) {
             console.log(data)
