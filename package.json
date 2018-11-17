@@ -1,42 +1,28 @@
-{
-  "name": "material-kit",
-  "version": "2.0.4",
-  "description": "Material Kit, a Google Material Desgin. Coded by Creative Tim",
-  "main": "index.html",
-  "directories": {
-    "example": "root"
-  },
+
+  "name": "offthechain",
+  "version": "1.0.0",
+  "description": "1. Off the Chain: Helping you reconnect with your lost beloved furry friends. This application will let you post notices showing where you may have lost your pet, or allow you to post if you have found a companion who happened to lose their way. Using map data as well as pins, you can drop last known locations of your pet, or drop where pets were found allowing you to easily see where they were found.",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/material-kit.git"
+    "url": "git+https://github.com/Project2-PetFinder/OffTheChain.git"
   },
-  "keywords": [
-    "material kit",
-    "bootstrap material admin",
-    "bootstrap material kit",
-    "material design admin",
-    "material design",
-    "creative tim",
-    "html kit",
-    "html css kit",
-    "web kit",
-    "freebie",
-    "free bootstrap kit",
-    "css3 kit",
-    "bootstrap admin",
-    "bootstrap kit",
-    "frontend",
-    "responsive bootstrap kit"
-  ],
-  "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
-  "license": "MIT",
+  "author": "",
+  "license": "ISC",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/material-kit/issues"
+    "url": "https://github.com/Project2-PetFinder/OffTheChain/issues"
   },
-  "devDependencies": {
+  "homepage": "https://github.com/Project2-PetFinder/OffTheChain#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql2": "^1.6.4",
+    "sequelize": "^4.41.2"
+  }, 
+ "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-clean": "^0.4.0",
@@ -45,5 +31,5 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-open": "^3.0.1"
   },
-  "homepage": "https://demos.creative-tim.com/material-kit/index.html"
+
 }
