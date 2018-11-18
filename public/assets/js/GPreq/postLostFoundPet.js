@@ -70,18 +70,20 @@ $(document).ready(function () {
           found_location:clickedPoint,
           at_AAC:"No",
           intake_date:"11/17/2018",
-          looks_like: $(".dog-type").val(),
+          looks_like: $(".dog-type").val().trim(),
           type: "Dog",
-          color: $(".color").val(),
-          sex: $(".sex").val(),
-          age: $(".age").val(),
-          image_link: $(".picture").val(),
+          color: $(".color").val().trim(),
+          sex: $(".sex").val().trim(),
+          age: $(".age").val().trim(),
+          image_link: $(".picture").val().trim(),
       };
+      
       $(".submit").on("click", function (event) {
-        console.log(clickedPoint)
+        
         $.post("/api/pets", foundPet,
         function(data) {
             alert(data)
+            alert(foundPet)
          
         
     })
