@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 
 var kittayIcon = L.icon({
-    iconUrl: '../public/assets/img/kittay.png', //"public/assets/img/kittay.png",
+    iconUrl: './assets/img/kittay.png', //"public/assets/img/kittay.png",
 
     iconSize:     [25, 36], // size of the icon
     shadowSize:   [50, 64], // size of the shadow
@@ -12,7 +12,7 @@ var kittayIcon = L.icon({
     popupAnchor:  [-10, -35] // point from which the popup should open relative to the iconAnchor
 });
 var doggyIcon = L.icon({
-    iconUrl: "../public/assets/img/dog.png",
+    iconUrl: "./assets/img/dog.png",
     
 
     iconSize:     [25, 36], // size of the icon
@@ -41,11 +41,11 @@ var doggyIcon = L.icon({
            let mapPoint= data[i].found_location.split(',')
            let mapPointParsed= [parseFloat(mapPoint[0]),parseFloat(mapPoint[1])]
            if(data[i].type==="Dog"){
-			marker = new L.marker(mapPointParsed), {icon:doggyIcon}
+			marker = new L.marker((mapPointParsed), {icon:doggyIcon})
 				.bindPopup(data[i].animal_ID)
         .addTo(mymap);}
         else if(data[i].type==="Cat"){
-        marker = new L.marker(mapPointParsed), {icon:kittayIcon}
+        marker = new L.marker((mapPointParsed), {icon:kittayIcon})
 				.bindPopup(data[i].animal_ID)
         .addTo(mymap);}}
         
