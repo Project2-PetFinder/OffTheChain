@@ -38,7 +38,5 @@ module.exports = function(app) {
     });
 
     // If no matching route is found default to landing page
-    app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/landing-page.html"));
-  });
+    
 }
