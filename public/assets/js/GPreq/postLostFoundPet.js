@@ -82,8 +82,8 @@ $(document).ready(function () {
         
         $.post("/api/pets", foundPet,
         function(data) {
-            alert(data)
-            alert(foundPet)
+            
+            alert(foundPet.name, " ", foundPet.looks_like)
          
         
     })
