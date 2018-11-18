@@ -42,11 +42,11 @@ var doggyIcon = L.icon({
            let mapPointParsed= [parseFloat(mapPoint[0]),parseFloat(mapPoint[1])]
            if(data[i].type==="Dog"){
 			marker = new L.marker((mapPointParsed), {icon:doggyIcon})
-        .bindPopup("Animal_ID"+String(data[i].animal_ID))
+        .bindPopup("Animal_ID "+String(data[i].animal_ID))
         .addTo(mymap);}
         else if(data[i].type==="Cat"){
         marker = new L.marker((mapPointParsed), {icon:kittayIcon})
-				.bindPopup("Animal_ID"+String(data[i].animal_ID))
+				.bindPopup("Animal_ID "+String(data[i].animal_ID))
         .addTo(mymap);}}
         
     }});
