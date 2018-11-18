@@ -81,7 +81,7 @@ $(document).ready(function () {
         console.log(clickedPoint)
         $.post("/api/pets", foundPet,
         function(data) {
-            console.log(data)
+            alert(data)
          
         
     })
