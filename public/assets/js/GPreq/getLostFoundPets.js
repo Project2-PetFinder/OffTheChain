@@ -46,7 +46,8 @@ var doggyIcon = L.icon({
         .addTo(mymap);}
         else if(data[i].type==="Cat"){
         marker = new L.marker((mapPointParsed), {icon:kittayIcon})
-				.bindPopup("Animal ID "+data[i].animal_ID)
+        layer.bindPopup(String(param))
+				.bindPopup("Animal_ID"+String(data[i].animal_ID))
         .addTo(mymap);}}
         
     }});
