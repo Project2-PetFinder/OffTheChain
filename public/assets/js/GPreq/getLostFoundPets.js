@@ -35,8 +35,9 @@ var doggyIcon = L.icon({
 
      $.get("/api/pets", 
         function(data) {
-            console.log(data)
+            
           for (var i = 0; i < data.length; i++) {
+            if(data[i].found_location){
            let mapPoint= data[i].found_location.split(',')
            let mapPointParsed= [parseFloat(mapPoint[0]),parseFloat(mapPoint[1])]
            if(data[i].type==="Dog"){
@@ -46,7 +47,7 @@ var doggyIcon = L.icon({
         else if(data[i].type==="Cat"){
         marker = new L.marker(mapPointParsed), {icon:kittayIcon}
 				.bindPopup(data[i].animal_ID)
-        .addTo(mymap);}
+        .addTo(mymap);}}
         
     }});
 
