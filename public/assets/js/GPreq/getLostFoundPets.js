@@ -53,7 +53,7 @@ var doggyIcon = L.icon({
 
     function onMapClick(e) {
       
-      marker.bindPopup(popupContent).openPopup();
+      marker.openPopup();
 
     }
 
