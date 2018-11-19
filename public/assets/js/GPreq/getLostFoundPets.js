@@ -52,7 +52,7 @@ $(document).ready(function () {
           }
         }
         var name = "Not Listed"
-        if (response.officials[i].name) { name = data[i].name }
+        if (data[i].name) { name = data[i].name }
         $(".petList").append(`<tr>
         <td class="animal-id">${animal_id}</td>
         <td class="name">${name}</td>
