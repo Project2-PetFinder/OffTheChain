@@ -16,6 +16,9 @@
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   
+  <!-- Jquery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
   <!-- CSS Files -->
   <link href="./assets/css/material-kit.css?v=2.0.4" rel="stylesheet">
@@ -42,8 +45,11 @@
               <i class="material-icons">reorder</i> Content
             </a>
             <div class="dropdown-menu dropdown-with-icons">
-              <a href="../index.html" class="dropdown-item">
+              <a href="../views/team.html" class="dropdown-item">
                 <i class="material-icons">info</i> About Us
+              </a>
+              <a href="../views/lost-form.html" class="dropdown-item">
+                <i class="material-icons">info</i> Lost Pet?
               </a>
               <a href="https://demos.creative-tim.com/material-kit/docs/2.0/getting-started/introduction.html" class="dropdown-item">
                 <i class="material-icons">content_paste</i> Documentation
@@ -54,6 +60,22 @@
       </div>
     </div>
   </nav>
+
+  <!--Background-->
+  <div class="page-header header-filter" data-parallax="true" style="background-image: url('../public/assets/img/lostPage.jpg')">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <h1 class="title">Lost your pet?</h1>
+          <h4> Just fill out the customized form and we'll do the rest.</h4>
+          <br>
+          <button class="btn btn-primary btn-raised btn-lg" onclick="smoothScroll(document.getElementById('first'))">
+              <i class="fas fa-angle-down"></i>  Continue
+          </button> 
+        </div>
+      </div>
+    </div>
+  </div>
   
   <!-- Main Container-->
   <div class="main main-raised">
@@ -72,14 +94,15 @@
         <div class="row">
           <div class="col-md-6 ml-auto mr-auto">
             <div class="profile-tabs">
+              <!-- Animal Icons-->
               <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#studio" role="tab" data-toggle="tab">
+                  <a class="nav-link active" href="#dog" role="tab" data-toggle="tab">
                     <i class="material-icons">pets</i> Dog
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#works" role="tab" data-toggle="tab">
+                  <a class="nav-link" href="#cat" role="tab" data-toggle="tab">
                     <i class="material-icons">pets</i> Cat
                   </a>
                 </li>
@@ -87,6 +110,7 @@
             </div>
           </div>
         </div>
+        <!--Entire Dog Form-->
         <div class="tab-content tab-space">
           <div class="tab-pane active text-center gallery" id="studio">
             <div class="row">
@@ -150,8 +174,8 @@
           
                       <div class="row">
                         <div class="col-md-4 ml-auto mr-auto text-center">
-                          <button class="btn btn-primary btn-raised">
-                            Submit
+                          <button class="btn btn-primary btn-raised" id="first">
+                            Continue
                           </button><!--Dog Submit-->
                         </div>
                       </div>
@@ -161,6 +185,7 @@
               </div>
             </div>
           </div>
+          <!-- Entire Cat Form-->
           <div class="tab-pane text-center gallery" id="works">
             <div class="row">
               <div class="section section-contacts">
@@ -219,8 +244,8 @@
           
                       <div class="row">
                         <div class="col-md-4 ml-auto mr-auto text-center">
-                          <button class="btn btn-primary btn-raised">
-                            Submit
+                          <button class="btn btn-primary btn-raised" id="first">
+                            Continue
                           </button>
                         </div>
                       </div>
@@ -274,6 +299,8 @@
  
     <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
     <script src="./assets/js/GPreq/postLostFoundPet.js"></script>
+
+
 </body>
 
 </html>
