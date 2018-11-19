@@ -54,17 +54,17 @@ $(document).ready(function () {
         var name = "Not Listed"
         if (data[i].name) { name = data[i].name }
         $(".petList").append(`<tr>
-        <td class="animal-id">${animal_ID}</td>
-        <td class="name">${name}</td>
-        <td class="found-location">${found_location}</td>
-        <td class="at-aac">${at_AAC}</td>
-        <td class="intake-date">${intake_date}</td>
-        <td class="looks-like">${looks_like}</td>
-        <td class="type">${type}</td>
-        <td class="color">${color}</td>
-        <td class="sex">${sex}</td>
-        <td class="age">${age}</td>
-        <img height="100" width="100" src='${image_link}' " /></td>
+        <td class="animal-id">${data[i].animal_ID}</td>
+        <td class="name">${data[i].name}</td>
+        <td class="found-location">${data[i].found_location}</td>
+        <td class="at-aac">${data[i].at_AAC}</td>
+        <td class="intake-date">${data[i].intake_date}</td>
+        <td class="looks-like">${data[i].looks_like}</td>
+        <td class="type">${data[i].type}</td>
+        <td class="color">${data[i].color}</td>
+        <td class="sex">${data[i].sex}</td>
+        <td class="age">${data[i].age}</td>
+        <img height="100" width="100" src='${data[i].image_link}' " /></td>
         </tr>`)
 
 
