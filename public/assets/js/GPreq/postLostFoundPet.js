@@ -64,12 +64,13 @@ $(document).ready(function () {
         }
         mymap.on('click', onMapClick);
        
-        
+     
       
       $(".submit").on("click", function (event) {
+        event.preventDefault();
         var foundPet = {
           name: $(".dog-name").val().trim(),
-          found_location:clickedPoint,
+          found_location:clickedPointString,
           at_AAC:"No",
           intake_date:"11/17/2018",
           looks_like: $(".dog-type").val().trim(),
@@ -79,6 +80,7 @@ $(document).ready(function () {
           age: $(".age").val().trim(),
           image_link: $(".picture").val().trim(),
       };
+      console.log(foundPet)
         $.post("/api/pets", foundPet,
         function(data) {
             
