@@ -54,7 +54,7 @@ $(document).ready(function () {
         var name = "Not Listed"
         if (data[i].name) { name = data[i].name }
         $(".petList").append(`<tr>
-        <td class="animal-id">${animal_id}</td>
+        <td class="animal-id">${animal_ID}</td>
         <td class="name">${name}</td>
         <td class="found-location">${found_location}</td>
         <td class="at-aac">${at_AAC}</td>
