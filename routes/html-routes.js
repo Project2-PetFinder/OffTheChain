@@ -9,36 +9,34 @@ module.exports = function(app) {
   
     // index route loads view.html
     app.get("/petsearch", function(req, res) {
-      res.sendFile(path.join(__dirname, "../public/getStarterFile.html"));
+      res.sendFile(path.join(__dirname, "./getStarterFile.html"));
     });
 
     // route for home page
     app.get("/home", function(req, res) {
-      res.sendFile(path.join(__dirname, "../views/landing-page.html"));
+      res.sendFile(path.join(__dirname, "./landing-page.html"));
     });
 
     // route for lost form
     app.get("/lost", function(req, res) {
-      res.sendFile(path.join(__dirname, "../views/lost-form.html"));
+      res.sendFile(path.join(__dirname, "./lost-form.html"));
     });
 
     // route for found form
     app.get("/found", function(req, res) {
-      res.sendFile(path.join(__dirname, "../views/found-form.html"));
+      res.sendFile(path.join(__dirname, "./found-form.html"));
     });
 
     // route for map-search
     app.get("/database", function(req, res) {
-      res.sendFile(path.join(__dirname, "../views/map-results.html"));
+      res.sendFile(path.join(__dirname, "./map-results.html"));
     });
 
     // map for team page
     app.get("/team", function(req, res) {
-      res.sendFile(path.join(__dirname, "../views/team.html"));
+      res.sendFile(path.join(__dirname, "./team.html"));
     });
 
     // If no matching route is found default to landing page
-    app.get("*", function(req, res) {
-    res.sendFile(path.join(__dirname, "../views/landing-page.html"));
-  });
+    
 }

@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     //Generate Map
     var kittayIcon = L.icon({
-        iconUrl: '../public/assets/img/kittay.png', //"public/assets/img/kittay.png",
+        iconUrl: './assets/img/kittay.png', //"public/assets/img/kittay.png",
     
         iconSize:     [25, 36], // size of the icon
         shadowSize:   [50, 64], // size of the shadow
@@ -12,7 +12,7 @@ $(document).ready(function () {
         popupAnchor:  [-10, -35] // point from which the popup should open relative to the iconAnchor
     });
     var doggyIcon = L.icon({
-        iconUrl: "../public/assets/img/dog.png",
+        iconUrl: "./assets/img/dog.png",
     
         iconSize:     [25, 36], // size of the icon
         shadowSize:   [50, 64], // size of the shadow
@@ -39,7 +39,6 @@ $(document).ready(function () {
           if(Address.length>0){
           mymap.removeLayer(Address[0]);
           Address=[]}
-          console.log(Address)
           lat = e.latlng.lat;
           lng = e.latlng.lng;
           clickedPoint = [lat, lng]
@@ -65,23 +64,25 @@ $(document).ready(function () {
         }
         mymap.on('click', onMapClick);
        
+        
+      
+      $(".submit").on("click", function (event) {
         var foundPet = {
           name: $(".dog-name").val().trim(),
           found_location:clickedPoint,
           at_AAC:"No",
           intake_date:"11/17/2018",
-          looks_like: $(".dog-type").val(),
+          looks_like: $(".dog-type").val().trim(),
           type: "Dog",
-          color: $(".color").val(),
-          sex: $(".sex").val(),
-          age: $(".age").val(),
-          image_link: $(".picture").val(),
+          color: $(".color").val().trim(),
+          sex: $(".sex").val().trim(),
+          age: $(".age").val().trim(),
+          image_link: $(".picture").val().trim(),
       };
-      $(".submit").on("click", function (event) {
-        console.log(clickedPoint)
         $.post("/api/pets", foundPet,
         function(data) {
-            alert(data)
+            
+            alert(foundPet.name, " ", foundPet.looks_like)
          
         
     })
