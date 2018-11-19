@@ -85,7 +85,7 @@ $(document).ready(function () {
         $.post("/api/pets", foundPet,
         function(data) {
             
-            alert(foundPet.name, " ", foundPet.looks_like)
+            alert("Your pet has been added to the our database!")
          
         
     })

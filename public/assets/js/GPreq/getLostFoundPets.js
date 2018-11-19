@@ -64,7 +64,6 @@ $(document).ready(function () {
         <td class="color">${data[i].color}</td>
         <td class="sex">${data[i].sex}</td>
         <td class="age">${data[i].age}</td>
-        <img height="100" width="100" src='${data[i].image_link}' " /></td>
         </tr>`)
 
 
