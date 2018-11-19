@@ -33,6 +33,7 @@ $(document).ready(function () {
         }).addTo(mymap);
         var Address=[]
         var clickedPoint=""
+        var clickedPointString=""
         
         function onMapClick(e) {
           
