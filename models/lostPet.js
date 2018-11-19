@@ -2,7 +2,6 @@ module.exports = function(sequelize, Sequelize) {
     var lostPet = sequelize.define("lostPet", {
       animal_ID: {
         type: Sequelize.INTEGER,
-        allowNull: false,
         auto_increment:true,
       },
       name: {
