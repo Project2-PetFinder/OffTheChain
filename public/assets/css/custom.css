@@ -3,6 +3,7 @@
     height: 500px;
   }
 
+
 .map-container {
   display: flex;
   align-items: center;
@@ -17,3 +18,4 @@
   flex-direction: row;
   justify-content: center;
 }
+
