@@ -39,6 +39,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
       </div>
+      <!--Dropdown Menu-->
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <li class="dropdown nav-item">
@@ -46,8 +47,17 @@
               <i class="material-icons">reorder</i> Content
             </a>
             <div class="dropdown-menu dropdown-with-icons">
-              <a href="../views/team.html" class="dropdown-item">
+              <a href="team.html" class="dropdown-item">
                 <i class="material-icons">info</i> About Us
+              </a>
+              <a href="lost-form.html" class="dropdown-item">
+                <i class="material-icons">label</i> Lost a Pet?
+              </a>
+              <a href="found-form.html" class="dropdown-item">
+                <i class="material-icons">label</i> Found a Pet?
+              </a>
+              <a href="map-results.html" class="dropdown-item">
+                <i class="material-icons">search</i> Search all found pets
               </a>
               <a href="https://demos.creative-tim.com/material-kit/docs/2.0/getting-started/introduction.html" class="dropdown-item">
                 <i class="material-icons">content_paste</i> Documentation
@@ -60,7 +70,7 @@
   </nav>
   
   <!--Background-->
-  <div class="page-header header-filter" data-parallax="true" style="background-image: url('./assets/img/dogPic.jpg')">
+  <div class="page-header header-filter" data-parallax="true" style="background-image: url('./assets/img/mapResults .jpg')">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -77,7 +87,6 @@
 
   <!--Main Container-->
   <div class="main main-raised">
-  
     <div class="jumbotron">
       <div class="section text-center">
         <div class="row">
@@ -85,7 +94,9 @@
             <h2 class="title">Search Our database:</h2>
             <h5 class="description"></h5>Choose whether you would like to search for dogs or cats and the map will populate the results for you.
           </div>
-          <div id="map"></div>
+          <div class="container map-container rounded">
+            <div id="map"></div>
+          </div>
         </div>
         
         <br>
