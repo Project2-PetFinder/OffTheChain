@@ -75,17 +75,15 @@ $(document).ready(function () {
       layout:"fitColumns",
       placeholder:"No Data Set",
       columns:[
-          {title:"ID", field:"id", sorter:"number", width:200},
-          {title:"Animal_ID", field:"animal_ID", sorter:"number"},
-          {title:"Name", field:"name", sorter:"string"},
+          {title:"Name", field:"name", sorter:"string", headerFilter:"input"},
           {title:"Found Location", field:"found_location", sorter:"string",  width:100},
-          {title:"At AAC?", field:"at_AAC", sorter:"string"},
+          {title:"At AAC?", field:"at_AAC", sorter:"string", headerFilter:"input"},
           {title:"Intake Date", field:"intake_date", sorter:"date", align:"center"},
-          {title:"Looks Like", field:"looks_like", align:"center", formatter:"string"},
-          {title:"Type", field:"type", align:"center", formatter:"string"},
-          {title:"Color", field:"color", align:"center", formatter:"string"},
-          {title:"Sex", field:"sex", align:"center", formatter:"string"},
-          {title:"Age", field:"age", align:"center", formatter:"string"}
+          {title:"Looks Like", field:"looks_like", align:"center", formatter:"string", headerFilter:"input"},
+          {title:"Type", field:"type", align:"center", formatter:"string", headerFilter:"input"},
+          {title:"Color", field:"color", align:"center", formatter:"string", headerFilter:"input"},
+          {title:"Sex", field:"sex", align:"center", formatter:"string", headerFilter:"input"},
+          {title:"Age", field:"age", align:"center", formatter:"string", headerFilter:"input"}
       ],
   });
   
