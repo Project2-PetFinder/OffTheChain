@@ -67,10 +67,10 @@ $(document).ready(function () {
       { title: "Sex", field: "sex", align: "center", formatter: "string", headerFilter: "input" },
       { title: "Age", field: "age", align: "center", formatter: "string", headerFilter: "input" }
     ],
-  
+    
     rowClick: function (e, row) {
-      var selectedData = $("#tabulator-table").tabulator("getSelectedData");
-      console.log(selectedData)
+      var data = row.getData();
+      console.log(data)
     },
   });
   table.setData("/api/pets");
