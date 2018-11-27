@@ -59,7 +59,6 @@ $(document).ready(function () {
             icon: kittayIcon
           })
         }
-
         clickedPointMarker.addTo(mymap).bindPopup(`You clicked on: <br> ${clickedPointResponse}`).openPopup();
         Address.push(clickedPointMarker);
         console.log(Address)
@@ -100,8 +99,6 @@ $(document).ready(function () {
       console.log("empty fields");
       alert(" Please enter the text ");
     }
-
-
   })
 
 });

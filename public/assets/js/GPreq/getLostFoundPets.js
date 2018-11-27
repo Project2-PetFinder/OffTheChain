@@ -47,7 +47,7 @@ $(document).ready(function () {
           }
           else if (data[i].type === "Cat") {
             marker = new L.marker((mapPointParsed), { icon: kittayIcon })
-              .bindPopup("Animal_ID " + String(data[i].animal_ID))
+              .bindPopup("Animal_ID " + String(data[i].animal_ID+ "<br>"+"<img src=" + data[i].image_link + "/>"))
               .addTo(mymap);
           }
         }
