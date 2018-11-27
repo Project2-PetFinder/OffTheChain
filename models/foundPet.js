@@ -48,7 +48,6 @@ module.exports = function(sequelize, Sequelize) {
       },
       image_link: {
         type:Sequelize.STRING,
-        allowNull: false,
         len: [1]
       }
     });
