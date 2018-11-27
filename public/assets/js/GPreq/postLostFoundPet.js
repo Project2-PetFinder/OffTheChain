@@ -65,8 +65,6 @@ $(document).ready(function () {
         }
         mymap.on('click', onMapClick);
        
-     
-      
       $(".submit").on("click", function (event) {
         event.preventDefault();
         var foundPet = {

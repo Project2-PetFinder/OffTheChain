@@ -5,7 +5,8 @@
 // *** Dependencies
 // =============================================================
 var express = require("express");
-
+var morgan = require("morgan");
+var router = require("./routes/dropzone.js")
 // Sets up the Express App
 // =============================================================
 var app = express();
@@ -18,6 +19,8 @@ var db = require("./models");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(morgan("dev"));
+
 // Static directory
 app.use(express.static("public"));
 
@@ -27,6 +30,7 @@ app.use(express.static("public"));
 // =============================================================
 require("./routes/html-routes.js")(app)
 require("./routes/foundPet-api-routes.js")(app);
+app.use(router)
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
