@@ -70,6 +70,29 @@ $(document).ready(function () {
 
       }
     });
+    var table = new Tabulator("#example-table", {
+      height:"311px",
+      layout:"fitColumns",
+      placeholder:"No Data Set",
+      columns:[
+          {title:"ID", field:"id", sorter:"number", width:200},
+          {title:"Animal_ID", field:"animal_ID", sorter:"number"},
+          {title:"Name", field:"name", sorter:"string"},
+          {title:"Found Location", field:"found_location", sorter:"string",  width:100},
+          {title:"At AAC?", field:"at_AAC", sorter:"string"},
+          {title:"Intake Date", field:"intake_date", sorter:"date", align:"center"},
+          {title:"Looks Like", field:"looks_like", align:"center", formatter:"string"},
+          {title:"Type", field:"type", align:"center", formatter:"string"},
+          {title:"Color", field:"color", align:"center", formatter:"string"},
+          {title:"Sex", field:"sex", align:"center", formatter:"string"},
+          {title:"Age", field:"age", align:"center", formatter:"string"}
+      ],
+  });
+  
+  //trigger AJAX load on "Load Data via AJAX" button click
+  $(".continue").click(function(){
+      table.setData("/api/pets");
+  });
 
   function onMapClick(e) {
 
@@ -79,7 +102,7 @@ $(document).ready(function () {
 
   mymap.on('click', onMapClick);
 
-  var table = new Tabulator(".table", {});
+  
 
 })
 
