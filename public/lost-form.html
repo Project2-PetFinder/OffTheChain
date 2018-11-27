@@ -126,7 +126,7 @@
             <div class="profile-tabs">
               <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active" href="#studio" role="tab" data-toggle="tab">
+                  <a class="nav-link" href="#studio" role="tab" data-toggle="tab">
                     <i class="material-icons">pets</i> Dog
                   </a>
                 </li>
@@ -140,7 +140,7 @@
           </div>
         </div>
         <div class="tab-content tab-space">
-          <div class="tab-pane active text-center gallery" id="studio">
+          <div class="tab-pane active text-center gallery">
             <div class="row">
               <div class="section section-contacts">
                 <div class="row">
@@ -153,26 +153,26 @@
                       <div class="row">
                         <div class="col-md-3">
                           <div class="form-group">
-                            <label class="bmd-label-floating">Dog's Name</label>
-                            <input type="text" class="form-control">
+                            <label class="bmd-label-floating">Pet's Name</label>
+                            <input type="text" class="form-control pet-name">
                           </div>
                         </div>
                         <div class="col-md-3">
                           <div class="form-group">
-                            <label class="bmd-label-floating">Dog Type</label>
-                            <input type="text" class="form-control">
+                            <label class="bmd-label-floating">Pet Breed</label>
+                            <input type="text" class="form-control pet-type">
                           </div>
                         </div>
                         <div class="col-md-3">
                           <div class="form-group">
                             <label class="bmd-label-floating">Looks Like</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control looks-like">
                           </div>
                         </div>
                         <div class="col-md-3">
                           <div class="form-group">
-                            <label class="bmd-label-floating">Color</label>
-                            <input type="text" class="form-control">
+                            <label class="bmd-label-floating">Pet Color</label>
+                            <input type="text" class="form-control color">
                           </div>
                         </div>
                       </div>
@@ -183,7 +183,7 @@
                           <div class="form-group">
 
                             <label class="bmd-label-floating">Sex</label>
-                            <select class="form-control selectpicker" id="sex myDropdown">
+                            <select class="form-control selectpicker sex" id="sex myDropdown">
                               <option></option>
 
                               <option>Male</option>
@@ -194,13 +194,13 @@
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Age</label>
-                            <input type="number" class="form-control">
+                            <input type="number" class="form-control age">
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Date Lost</label>
-                            <input type="date" class="form-control">
+                            <input type="date" class="form-control date-lost">
                           </div>
                         </div>
                       </div><!--End of Second Row -->
@@ -238,95 +238,7 @@
               </div>
             </div>
           </div>
-          <div class="tab-pane text-center gallery" id="works">
-            <div class="row">
-              <div class="section section-contacts">
-                <div class="row">
-                  <div class="col-md-10 ml-auto mr-auto text-center">
-                    <h4 class="text-center description">Fill out the form below to enter your lost pet into the system. We will cross-reference your pet with
-                      found pets to show you potential matches. You can also sign up for an auto-notfication when new potential
-                      matches are added to the database.</h4>
-                    <!--Lost Cat Criteria-->
-                    <form class="contact-form">
-                      <div class="row">
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Cat's Name</label>
-                            <input type="text" class="form-control">
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Cat Breed</label>
-                            <input type="text" class="form-control">
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Looks Like</label>
-                            <input type="text" class="form-control">
-                          </div>
-                        </div>
-                        <div class="col-md-3">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Color</label>
-                            <input type="text" class="form-control">
-                          </div>
-                        </div>
-                      </div>
-                      <!--End of First Row-->
-
-                      <div class="row">
-                        <div class="col-md-4">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Sex</label>
-                            <input type="text" class="form-control">
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Age</label>
-                            <input type="number" class="form-control">
-                          </div>
-                        </div>
-                        <div class="col-md-4">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Date Lost</label>
-                            <input type="date" class="form-control">
-                          </div>
-                        </div>
-                      </div><!--End of Second Row-->
-
-                      <!--Photo Upload-->
-                      <div class="row upload">
-                        <div class="col-md-4">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Picture</label>
-                            <form action="/file-upload"class="dropzone" id="my-awesome-dropzone"></form>
-                            <form action="/file-upload"class="dropzone" id="my-awesome-dropzone"></form>
-                          </div>
-                        </div>
-
-                      </div><!-- End of Third Row -->
           
-                      <div class="row">
-                        <div class="col-md-4 ml-auto mr-auto text-center">
-                          <button class="btn btn-primary btn-raised">
-                            Submit
-                          </button>
-                        </div>
-                      </div>
-
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div><!--End of Main Container Div-->
   
   <br><br><br><br>
