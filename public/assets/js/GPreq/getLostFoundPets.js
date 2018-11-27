@@ -70,7 +70,7 @@ $(document).ready(function () {
     
     rowClick: function (e, row) {
       var data = row.getData();
-      console.log(data)
+      marker.clearLayers();
     },
   });
   table.setData("/api/pets");
