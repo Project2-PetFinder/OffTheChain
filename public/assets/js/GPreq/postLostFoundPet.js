@@ -68,12 +68,12 @@ $(document).ready(function () {
       $(".submit").on("click", function (event) {
         event.preventDefault();
         var foundPet = {
-          name: $(".dog-name").val().trim(),
+          name: $(".pet-name").val().trim(),
           found_location:clickedPointString,
           at_AAC:"No",
-          intake_date:"11/17/2018",
-          looks_like: $(".dog-type").val().trim(),
-          type: "Dog",
+          intake_date:$(".date-found").val().trim(),
+          looks_like: $(".pet-type").val().trim(),
+          type: $("a.active.show").val().trim(),
           color: $(".color").val().trim(),
           sex: $(".sex").val().trim(),
           age: $(".age").val().trim(),
