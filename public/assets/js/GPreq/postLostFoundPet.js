@@ -1,6 +1,5 @@
 $(document).ready(function () {
 
-
   //Generate Map
   var kittayIcon = L.icon({
     iconUrl: './assets/img/kittay.png', //"public/assets/img/kittay.png",
@@ -79,17 +78,17 @@ $(document).ready(function () {
   )
   {
     var foundPet = {
-      name: $(".pet-name").val().trim(),
-      Address: clickedPointResponse,
+      name: $(".pet-name").val(),           
+     // Address: clickedPointResponse,//
       found_location: clickedPointString,
       at_AAC: "No",
       intake_date: "11/17/2018",
-      looks_like: $(".pet-type").val().trim(),
+      looks_like: $(".pet-type").val(),
       type: "Dog",
-      color: $(".color").val().trim(),
-      sex: $(".sex").val().trim(),
-      age: $(".age").val().trim(),
-      image_link: $(".picture").val().trim(),
+      color: $(".color").val(),
+      sex: $(".sex").val(),
+      age: $(".age").val(),
+      image_link: $(".picture").val(),
     };
   
       $.post("/api/pets", foundPet,
@@ -97,7 +96,9 @@ $(document).ready(function () {
           alert("Your pet has been added to the our database!")
         })
     }else {
-      console.log("User sent blank fields for Name & Looks like color")
+      document.getElementById('error_text').innerHTML = 'fill your name'
+      console.log("empty fields");
+      alert(" Please enter the text ");
     }
 
 
