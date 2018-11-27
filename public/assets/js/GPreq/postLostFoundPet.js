@@ -73,7 +73,7 @@ $(document).ready(function () {
           at_AAC:"No",
           intake_date:$(".date-found").val().trim(),
           looks_like: $(".pet-type").val().trim(),
-          type: $("a.active.show").val().trim(),
+          type: $(".active.show").val().trim(),
           color: $(".color").val().trim(),
           sex: $(".sex").val().trim(),
           age: $(".age").val().trim(),
