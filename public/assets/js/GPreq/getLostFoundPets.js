@@ -52,46 +52,33 @@ $(document).ready(function () {
         }
       }
     });
-    var table = new Tabulator("#tabulator-table", {
-      height:"311px",
-      layout:"fitColumns",
-      placeholder:"No Data Set",
-      columns:[
-          {title:"Name", field:"name", sorter:"string", headerFilter:"input"},
-          {title:"Found Location", field:"found_location", sorter:"string",  width:100},
-          {title:"At AAC?", field:"at_AAC", sorter:"string", headerFilter:"input"},
-          {title:"Intake Date", field:"intake_date", sorter:"date", align:"center"},
-          {title:"Looks Like", field:"looks_like", align:"center", formatter:"string", headerFilter:"input"},
-          {title:"Type", field:"type", align:"center", formatter:"string", headerFilter:"input"},
-          {title:"Color", field:"color", align:"center", formatter:"string", headerFilter:"input"},
-          {title:"Sex", field:"sex", align:"center", formatter:"string", headerFilter:"input"},
-          {title:"Age", field:"age", align:"center", formatter:"string", headerFilter:"input"}
-      ],
+  var table = new Tabulator("#tabulator-table", {
+    height: "311px",
+    layout: "fitColumns",
+    placeholder: "No Data Set",
+    columns: [
+      { title: "Name", field: "name", sorter: "string", headerFilter: "input" },
+      { title: "Found Location", field: "found_location", sorter: "string", width: 100 },
+      { title: "At AAC?", field: "at_AAC", sorter: "string", headerFilter: "input" },
+      { title: "Intake Date", field: "intake_date", sorter: "date", align: "center" },
+      { title: "Looks Like", field: "looks_like", align: "center", formatter: "string", headerFilter: "input" },
+      { title: "Type", field: "type", align: "center", formatter: "string", headerFilter: "input" },
+      { title: "Color", field: "color", align: "center", formatter: "string", headerFilter: "input" },
+      { title: "Sex", field: "sex", align: "center", formatter: "string", headerFilter: "input" },
+      { title: "Age", field: "age", align: "center", formatter: "string", headerFilter: "input" }
+    ],
+  
+    rowClick: function (e, row) {
+      var selectedData = $("#tabulator-table").tabulator("getSelectedData");
+      console.log(selectedData)
+    },
   });
   table.setData("/api/pets");
-  $("#tabulator-table").tabulator({
-    rowClick:function(e, row){
-      var selectedData = $("#tabulator-table").tabulator("getSelectedData"); 
-      console.log(selectedData)
-},
-});
-  
-  
-  //trigger AJAX load on "Load Data via AJAX" button click
-  
-     
- 
 
   function onMapClick(e) {
-
     marker.openPopup();
-
   }
-
   mymap.on('click', onMapClick);
-
-  
-
 })
 
 
