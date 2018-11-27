@@ -1,6 +1,7 @@
 
 $(document).ready(function () {
 
+  table.setData("/api/pets");
 
   var kittayIcon = L.icon({
     iconUrl: './assets/img/kittay.png', //"public/assets/img/kittay.png",
@@ -51,26 +52,9 @@ $(document).ready(function () {
               .addTo(mymap);
           }
         }
-        var name = "Not Listed"
-        if (data[i].name) { name = data[i].name }
-        $(".petList").append(`<tr>
-        <td class="animal-id">${data[i].animal_ID}</td>
-        <td class="name">${data[i].name}</td>
-        <td class="found-location">${data[i].found_location}</td>
-        <td class="at-aac">${data[i].at_AAC}</td>
-        <td class="intake-date">${data[i].intake_date}</td>
-        <td class="looks-like">${data[i].looks_like}</td>
-        <td class="type">${data[i].type}</td>
-        <td class="color">${data[i].color}</td>
-        <td class="sex">${data[i].sex}</td>
-        <td class="age">${data[i].age}</td>
-        </tr>`)
-        
-
-
       }
     });
-    var table = new Tabulator("#example-table", {
+    var table = new Tabulator("#tabulator-table", {
       height:"311px",
       layout:"fitColumns",
       placeholder:"No Data Set",
@@ -86,11 +70,18 @@ $(document).ready(function () {
           {title:"Age", field:"age", align:"center", formatter:"string", headerFilter:"input"}
       ],
   });
+  $("#tabulator-table").tabulator({
+    rowClick:function(e, row){
+      var selectedData = $("#tabulator-table").tabulator("getSelectedData"); 
+      console.log(selectedData)
+},
+});
+  
   
   //trigger AJAX load on "Load Data via AJAX" button click
-  $(".continue").click(function(){
-      table.setData("/api/pets");
-  });
+  
+     
+ 
 
   function onMapClick(e) {
 
