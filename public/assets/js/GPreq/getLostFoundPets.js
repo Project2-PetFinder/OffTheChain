@@ -65,6 +65,32 @@ $(document).ready(function () {
         <td class="sex">${data[i].sex}</td>
         <td class="age">${data[i].age}</td>
         </tr>`)
+        var tabledata = [
+          {id:data[i].animal_ID, name:data[i].name, found_location:data[i].found_location, at_AAC:data[i].at_AAC, intake_date:data[i].intake_date, looks_like: data[i].looks_like, type: data[i].type, color: data[i].color, sex:data[i].sex,age:data[i].age},
+          
+        ];
+      
+        //create Tabulator on DOM element with id "example-table"
+      var table = new Tabulator("#example-table", {
+        height:205, // set height of table (in CSS or here), this enables the Virtual DOM and improves render speed dramatically (can be any valid css height value)
+        data:tabledata, //assign data to table
+        layout:"fitColumns", //fit columns to width of table (optional)
+        columns:[ //Define Table Columns
+          {title:"ID", field:"id", width:150},
+          {title:"Name", field:"age",  formatter:"col"},
+          {title:"Found Location", field:"found_location",  formatter:"col"},
+          {title:"At AAC?", field:"at_AAC",  formatter:"col"},
+          {title:"Intake Date", field:"intake_date", sorter:"date"},
+          {title:"Looks Like", field:"looks_like",formatter:"col" },
+          {title:"Type", field:"type",formatter:"col" },
+          {title:"Color", field:"color",formatter:"col" },
+          {title:"Sex", field:"sex",formatter:"col" },
+          {title:"Age", field:"age",formatter:"col" }
+        ],
+        rowClick:function(e, row){ //trigger an alert message when the row is clicked
+          alert("Row " + row.getData().id + " Clicked!!!!");
+        },
+      });
 
 
       }
@@ -77,6 +103,8 @@ $(document).ready(function () {
   }
 
   mymap.on('click', onMapClick);
+
+  
 
 })
 
