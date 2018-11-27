@@ -1,8 +1,6 @@
 
 $(document).ready(function () {
 
-  table.setData("/api/pets");
-
   var kittayIcon = L.icon({
     iconUrl: './assets/img/kittay.png', //"public/assets/img/kittay.png",
 
@@ -70,6 +68,7 @@ $(document).ready(function () {
           {title:"Age", field:"age", align:"center", formatter:"string", headerFilter:"input"}
       ],
   });
+  table.setData("/api/pets");
   $("#tabulator-table").tabulator({
     rowClick:function(e, row){
       var selectedData = $("#tabulator-table").tabulator("getSelectedData"); 
