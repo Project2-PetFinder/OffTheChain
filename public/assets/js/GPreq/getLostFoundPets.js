@@ -73,6 +73,7 @@ $(document).ready(function () {
     rowClick: function (e, row) {
       var rowClicked = row.getData();
       console.log(rowClicked.id)
+      map.removeLayer(markers);
      }
    
   });
