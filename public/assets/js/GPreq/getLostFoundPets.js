@@ -73,7 +73,7 @@ $(document).ready(function () {
       console.log(data.id)
       marker.remove(mymap)
     }
-    },
+   
   });
   table.setData("/api/pets");
 
