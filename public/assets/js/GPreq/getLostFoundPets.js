@@ -54,7 +54,7 @@ $(document).ready(function () {
     });
     mymap.addLayer(markers);
     function clearAllMarkers(){
-      mymap.clearLayer(markers);
+      mymap.clearLayers(markers);
   }
 
   var table = new Tabulator("#tabulator-table", {
