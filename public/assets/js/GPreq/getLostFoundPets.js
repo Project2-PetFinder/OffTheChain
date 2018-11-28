@@ -77,10 +77,22 @@ $(document).ready(function () {
     rowClick: function (e, row) {
       var rowClicked = row.getData();
       console.log(rowClicked.id)
+      let rowMapPoint = rowClicked.found_location.split(',')
+      let rowmapPointParsed = [parseFloat(rowMapPoint[0]), parseFloat(rowMapPoint[1])]
       clearAllMarkers();
-     }
+      if (rowClicked.type === "Dog") {
+        marker = new L.marker((rowmapPointParsed), { icon: doggyIcon })
+          .bindPopup("Animal_ID " + String(rowClicked.animal_ID))
+          markers.addLayer(marker);
+      }
+      else if (rowClicked.type === "Cat") {
+        marker = new L.marker((rowmapPointParsed), { icon: kittayIcon })
+          .bindPopup("Animal_ID " + String(rowClicked.animal_ID))
+          markers.addLayer(marker);
+      }
    
-  });
+  }
+})
   table.setData("/api/pets");
 
   function onMapClick(e) {
