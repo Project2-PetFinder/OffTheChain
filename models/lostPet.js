@@ -7,6 +7,11 @@ module.exports = function(sequelize, Sequelize) {
       name: {
         type: Sequelize.STRING,
       },
+      Address: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+
       lost_location: {
         type: Sequelize.STRING,
         allowNull: false,
