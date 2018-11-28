@@ -53,8 +53,8 @@ $(document).ready(function () {
       }
     });
     mymap.addLayer(markers);
-    function removeAllMarkers(){
-      mymap.removeLayer(markers);
+    function clearAllMarkers(){
+      mymap.clearLayer(markers);
   }
 
   var table = new Tabulator("#tabulator-table", {
@@ -77,7 +77,7 @@ $(document).ready(function () {
     rowClick: function (e, row) {
       var rowClicked = row.getData();
       console.log(rowClicked.id)
-      removeAllMarkers();
+      clearAllMarkers();
      }
    
   });
