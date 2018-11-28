@@ -69,9 +69,20 @@ $(document).ready(function () {
     ],
     
     rowClick: function (e, row) {
-      var data = row.getData();
-      console.log(data.id)
-      marker.remove(mymap)
+      var rowClicked = row.getData();
+      console.log(rowClicked.id)
+      $.get("/api/pets",
+    function (data) {
+
+      for (var i = 0; i < data.length; i++) {
+        if (data[i].found_location) {
+          let mapPoint = data[i].found_location.split(',')
+          let mapPointParsed = [parseFloat(mapPoint[0]), parseFloat(mapPoint[1])]
+            marker = L.marker((mapPointParsed),{})
+              .remove(mymap);
+          }
+      }
+    });
     }
    
   });
