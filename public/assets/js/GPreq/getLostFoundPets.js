@@ -71,8 +71,7 @@ $(document).ready(function () {
     rowClick: function (e, row) {
       var data = row.getData();
       console.log(data.id)
-      for(var i = 0; i < this.marker.length; i++){
-        this.map.removeLayer(this.marker[i]);
+      marker.remove(mymap)
     }
     },
   });
