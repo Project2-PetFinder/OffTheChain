@@ -53,6 +53,9 @@ $(document).ready(function () {
       }
     });
     mymap.addLayer(markers);
+    function removeAllMarkers(){
+      map.removeLayer(markers);
+  }
 
   var table = new Tabulator("#tabulator-table", {
     height: "311px",
@@ -70,10 +73,11 @@ $(document).ready(function () {
       { title: "Age", field: "age", align: "center", formatter: "string", headerFilter: "input" }
     ],
     
+    
     rowClick: function (e, row) {
       var rowClicked = row.getData();
       console.log(rowClicked.id)
-      map.removeLayer(markers);
+      removeAllMarkers();
      }
    
   });
