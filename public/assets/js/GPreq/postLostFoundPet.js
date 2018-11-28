@@ -59,46 +59,37 @@ $(document).ready(function () {
             icon: kittayIcon
           })
         }
-        clickedPointMarker.addTo(mymap).bindPopup(`You clicked on: <br> ${clickedPointResponse}`).openPopup();
-        Address.push(clickedPointMarker);
-        console.log(Address)
-
-      })
-    }
-    searchAddress()
-  }
-  mymap.on('click', onMapClick);
-
-
-
-  $(".submit").on("click", function (event) {
-    event.preventDefault();
-    if (($(".pet-name").val()!=="") && ($(".pet-type").val() !=="")// && Address && color && sex//
+        mymap.on('click', onMapClick);
+       
+      $(".submit").on("click", function (event) {
+        event.preventDefault();
+        if (($(".pet-name").val()!=="") && ($(".pet-type").val() !=="")// && Address && color && sex//
   )
-  {
-    var foundPet = {
-      name: $(".pet-name").val(),           
-     // Address: clickedPointResponse,//
-      found_location: clickedPointString,
-      at_AAC: "No",
-      intake_date: "11/17/2018",
-      looks_like: $(".pet-type").val(),
-      type: "Dog",
-      color: $(".color").val(),
-      sex: $(".sex").val(),
-      age: $(".age").val(),
-      image_link: $(".picture").val(),
-    };
-  
-      $.post("/api/pets", foundPet,
-        function (data) {
-          alert("Your pet has been added to the our database!")
-        })
-    }else {
+        {
+        var foundPet = {
+          name: $(".pet-name").val().trim(),
+          found_location:clickedPointString,
+          at_AAC:"No",
+          intake_date:$(".date-found").val().trim(),
+          looks_like: $(".pet-type").val().trim(),
+          type: $("a.active.show").val().trim(),
+          color: $(".color").val().trim(),
+          sex: $(".sex").val().trim(),
+          age: $(".age").val().trim(),
+          
+      };
+      console.log(foundPet)
+        $.post("/api/pets", foundPet,
+        function(data) {
+            
+            alert("Your pet has been added to the our database!")
+         })
+          }else {
       document.getElementById('error_text').innerHTML = 'fill your name'
       console.log("empty fields");
       alert(" Please enter the text ");
     }
+
   })
 
 });
