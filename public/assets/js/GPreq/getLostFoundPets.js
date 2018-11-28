@@ -52,7 +52,7 @@ $(document).ready(function () {
         }
       }
     });
-    map.addLayer(markers);
+    mymap.addLayer(markers);
 
   var table = new Tabulator("#tabulator-table", {
     height: "311px",
