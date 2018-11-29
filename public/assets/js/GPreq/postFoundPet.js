@@ -71,7 +71,7 @@ $(document).ready(function () {
         name: $(".pet-name").val().trim(),
         found_location:clickedPointString,
         at_AAC:"No",
-        intake_date:"11/17/2018",
+        intake_date:$("#date-found").val().trim(),
         looks_like: $(".pet-type").val().trim(),
         type: "Dog",
         color: $(".color").val().trim(),
