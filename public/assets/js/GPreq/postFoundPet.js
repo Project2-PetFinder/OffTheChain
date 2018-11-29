@@ -34,7 +34,7 @@ $(document).ready(function () {
       var Address=[]
       var clickedPoint=""
       var clickedPointString=""
-      
+      var clickedPointResponse=""
       function onMapClick(e) {
         
         if(Address.length>0){
@@ -45,14 +45,15 @@ $(document).ready(function () {
         clickedPoint = [lat, lng]
        
         clickedPointString = clickedPoint.toString();
+        var clickedPointResponse=""
         //AJAX request to convert lat/lng to address for tooltip
         const searchAddress = address => {
           let geocodeRequest = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${clickedPointString}&key=${key}`;
           $.get(geocodeRequest).then(response => {
-            const clickedPointResponse = response.results[0].formatted_address;
-             if($(".petType").val()==="dog"){
+            clickedPointResponse = response.results[0].formatted_address;
+             if($(".dog-icon.active").val()==="dog"){
              clickedPointMarker = L.marker(clickedPoint, {icon:doggyIcon})}
-             else if($(".petType").val()==="cat"){
+             else if($(".cat-icon.active").val()==="cat"){
             clickedPointMarker = L.marker(clickedPoint, {icon:kittayIcon})}
              
              clickedPointMarker.addTo(mymap).bindPopup(`You clicked on: <br> ${clickedPointResponse}`).openPopup();
