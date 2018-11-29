@@ -19,6 +19,7 @@
   "homepage": "https://github.com/Project2-PetFinder/OffTheChain#readme",
   "dependencies": {
     "express": "^4.16.4",
+    "express-fileupload": "^1.0.0",
     "morgan": "^1.9.1",
     "mysql": "^2.16.0",
     "mysql2": "^1.6.4",

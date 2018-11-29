@@ -68,14 +68,13 @@
       </div>
     </div>
   </nav>
-
   <!--Background-->
   <div class="page-header header-filter" data-parallax="true" style="background-image: url('./assets/img/foundPage.jpg')">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
           <h1 class="title">Found a pet?</h1>
-          <h4> Fill out the form and we'll do the rest.</h4>
+          <h4> Someone is missing them.Fill out the form and we'll do the rest.</h4>
           <br>
           <button class="btn btn-primary btn-raised btn-lg" onclick="smoothScroll(document.getElementById('first'))">
               <i class="fas fa-angle-down"></i>  Continue
@@ -84,7 +83,6 @@
       </div>
     </div>
   </div>
-
   <!-- Main Container-->
   <div class="main main-raised">
     <div class="jumbotron">
@@ -92,26 +90,23 @@
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto">
             <h2 class="title">Found Pet Form:</h2>
-            <h5 class="description"></h5>Choose whether you have found a dog or a cat and then fill out the information provided.
+            <h5 class="description"></h5>Choose whether you have found a dog or a cat.
           </div>
         </div>
-
         <br>
-
         <!-- Cat or Dog-->
         <div class="row">
           <div class="col-md-6 ml-auto mr-auto">
             <div class="profile-tabs">
               <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
-
-                <li class="nav-item">
-                  <a class="nav-link" id="dog-icon" role="tab" data-toggle="tab">
-                    <i class="material-icons">pets</i> Dog
+                <li class="nav-item" id="first">
+                  <a class="nav-link" id="dog-icon" role="tab" data-toggle="tab" onclick="smoothScroll(document.getElementById('second'))">
+                      <i class="fas fa-dog"></i> Dog
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link cat-icon"  role="tab" data-toggle="tab">
-                    <i class="material-icons">pets</i> Cat
+                  <a class="nav-link cat-icon"  role="tab" data-toggle="tab" onclick="smoothScroll(document.getElementById('second'))">
+                    <i class="fas fa-cat"></i> Cat
                   </a>
                 </li>
               </ul>
@@ -124,15 +119,14 @@
               <div class="section section-contacts">
                 <div class="row">
                   <div class="col-md-10 ml-auto mr-auto">
-                    <h4 class="text-center description">Fill out the form below to enter your lost pet into the system. We will cross-reference your pet with
-                      found pets to show you potential matches. You can also sign up for an auto-notfication when new potential
-                      matches are added to the database.</h4>
+                    <h4 class="text-center description">Fill out the form below to enter the found pet into the database. Once it is added it will be posted for all lost pet owners to see and will also be cross-referenced with
+                        lost pets already in the database to find any potential matches and notify owners.</h4>
                     <!--Lost Dog Criteria-->
-                    <form class="contact-form">
+                    <form class="contact-form" id='uploadForm' action='http://localhost:8080/upload' method='post' encType="multipart/form-data"></form>
                       <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
-                            <label class="bmd-label-floating">Pet's Name</label>
+                            <label class="bmd-label-floating">Pet Name</label>
                             <input type="text" class="form-control pet-name">
                           </div>
                         </div>
@@ -148,14 +142,12 @@
                             <input type="text" class="form-control color">
                           </div>
                         </div>
-                      </div>
-                      <!--End of First Row-->
-
+                      </div><!--End of First Row-->                      
                       <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Sex</label>
-                            <input type="text" class="form-control sex">
+                            <input type="select" class="form-control sex">
                           </div>
                         </div>
                         <div class="col-md-4">
@@ -165,30 +157,40 @@
                           </div>
                         </div>
                         <div class="col-md-4">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Date Found</label>
-                            <input type="date" class="form-control date-found">
+                          <div class="form-group selectpicker">
+                            <label class="label-control"></label>
+                            <input id="date-found" required="" type="text" class="form-control text-center" placeholder="Date Found" onfocus="(this.type='date')"/>
                           </div>
                         </div>
                       </div><!--End of Second Row-->
 
                       <!--Photo Upload-->
-                      <div class="row upload">
+                      <div class="row upload" >
                         <div class="col-md-4">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Picture</label>
-                            <form action="/file-upload"class="dropzone" id="my-awesome-dropzone"></form>
-                            <form action="/file-upload"class="dropzone" id="my-awesome-dropzone"></form>
+                          <div class="form-group" >
+                            <label class="bmd-label-floating" >Picture</label>
+                            <form action="/upload" class="dropzone">
+                              <input type="file" id="photo">
+                            </form>                     
                           </div>
-                        </div>
+                        </div >
                       </div><!--End of Third Row-->
-                      <div class="row">
-                        <div class="col-md-4 ml-auto mr-auto text-center">
-                          <button class="btn btn-primary btn-raised">
-                            Submit
-                          </button>
+
+                      <br><br><br><br>
+
+                      <div class="main main-raised">
+                        <div class="jumbotron">
+                          <div class="section text-center">
+                            <h2 class="title found">Found Location:</h2>
+                            <h5 class="description"></h5>Click on the map where the pet was lost.
+                          </div>
+                          <div class="container map-container rounded">
+                            <div id="map"></div>
+                          </div>                          
+                          <br>                         
                         </div>
                       </div>
+                      <input class="btn btn-primary btn-raised btn-lg" type="submit"></input>
                     </form>
                   </div>
                 </div>
@@ -200,26 +202,8 @@
     </div>
   </div><!-- End Of Container Div-->
 
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <div class="main main-raised">
-    <div class="jumbotron">
-        <div class="container map-container rounded">
-          <div id="map"></div>
-        </div>
-      <select class="petType">
-        <option value="dog">Dog</option>
-        <option value="cat">Cat</option>
-      </select>
-    </div>
-  </div>
-
-
   <!--Footer-->
-  <footer class="footer footer-default">
+  <footer class="footer footer-default" >
     <div class="container">
       <nav class="float-left">
         <ul>
@@ -263,9 +247,7 @@
   <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"></script>
   <script src="./assets/js/GPreq/postLostFoundPet.js"></script>
   <script src="./assets/js/lost-found.js"></script>
-  <script src="./assets/js/dropZone.js"></script>
   
-
 </body>
 
 </html>

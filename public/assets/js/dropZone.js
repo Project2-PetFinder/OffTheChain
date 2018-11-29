@@ -1,10 +1,10 @@
 $(document).ready(function () {
-    $("#submit-all").on("click", function() {
+    $("#submit").on("click", function() {
         $.ajax({
-        url: "/file-upload",
+        url: "/upload",
         method: "POST",
         data: {
-          image: $("#my-awesome-dropzone")
+          image: $("#photo").val().trim(),
         }
       })
     })
