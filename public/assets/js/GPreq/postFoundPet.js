@@ -45,7 +45,6 @@ $(document).ready(function () {
         clickedPoint = [lat, lng]
        
         clickedPointString = clickedPoint.toString();
-        var clickedPointResponse=""
         //AJAX request to convert lat/lng to address for tooltip
         const searchAddress = address => {
           let geocodeRequest = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${clickedPointString}&key=${key}`;
