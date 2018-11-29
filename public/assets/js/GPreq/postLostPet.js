@@ -70,7 +70,7 @@ $(document).ready(function () {
           name: $(".pet-name").val().trim(),
           lost_location:clickedPointString,
           at_AAC:"No",
-          intake_date:$("#date-lost").val().trim(),
+          lost_date:$("#date-lost").val().trim(),
           looks_like: $(".pet-type").val().trim(),
           type: "Dog",
           color: $(".color").val().trim(),
