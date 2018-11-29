@@ -80,7 +80,7 @@ $(document).ready(function () {
           Address: clickedPointResponse,
       };
       console.log(lostPet)
-        $.post("/api/pets", lostPet,
+        $.post("/api/lostpets", lostPet,
         function(data) {
             
             alert("Your pet has been added to the our database!")
