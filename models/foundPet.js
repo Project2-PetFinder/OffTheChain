@@ -7,6 +7,11 @@ module.exports = function(sequelize, Sequelize) {
       name: {
         type: Sequelize.STRING,
       },
+      Address: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+
       found_location: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -48,7 +53,6 @@ module.exports = function(sequelize, Sequelize) {
       },
       image_link: {
         type:Sequelize.STRING,
-        allowNull: false,
         len: [1]
       }
     });

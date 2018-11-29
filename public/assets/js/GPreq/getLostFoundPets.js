@@ -1,7 +1,6 @@
 
 $(document).ready(function () {
 
-
   var kittayIcon = L.icon({
     iconUrl: './assets/img/kittay.png', //"public/assets/img/kittay.png",
 
@@ -32,7 +31,7 @@ $(document).ready(function () {
     id: 'mapbox.streets',
     accessToken: 'pk.eyJ1IjoiamN0b2JleSIsImEiOiJjam9kNGs3MzMwczI2M3BwYjVtaXRpZ2l1In0.sxKzZ76nyy_PN8ETEnoKKA'
   }).addTo(mymap);
-
+  var markers = new L.FeatureGroup();
   $.get("/api/pets",
     function (data) {
 
@@ -43,41 +42,63 @@ $(document).ready(function () {
           if (data[i].type === "Dog") {
             marker = new L.marker((mapPointParsed), { icon: doggyIcon })
               .bindPopup("Animal_ID " + String(data[i].animal_ID))
-              .addTo(mymap);
+              markers.addLayer(marker);
           }
           else if (data[i].type === "Cat") {
             marker = new L.marker((mapPointParsed), { icon: kittayIcon })
               .bindPopup("Animal_ID " + String(data[i].animal_ID))
-              .addTo(mymap);
+              markers.addLayer(marker);
           }
         }
-        var name = "Not Listed"
-        if (data[i].name) { name = data[i].name }
-        $(".petList").append(`<tr>
-        <td class="animal-id">${data[i].animal_ID}</td>
-        <td class="name">${data[i].name}</td>
-        <td class="found-location">${data[i].found_location}</td>
-        <td class="at-aac">${data[i].at_AAC}</td>
-        <td class="intake-date">${data[i].intake_date}</td>
-        <td class="looks-like">${data[i].looks_like}</td>
-        <td class="type">${data[i].type}</td>
-        <td class="color">${data[i].color}</td>
-        <td class="sex">${data[i].sex}</td>
-        <td class="age">${data[i].age}</td>
-        </tr>`)
-
-
       }
     });
-
-  function onMapClick(e) {
-
-    marker.openPopup();
-
+    mymap.addLayer(markers);
+    function clearAllMarkers(){
+      markers.clearLayers();
   }
 
-  mymap.on('click', onMapClick);
+  var table = new Tabulator("#tabulator-table", {
+    height: "311px",
+    layout: "fitColumns",
+    placeholder: "No Data Set",
+    columns: [
+      { title: "Name", field: "name", sorter: "string", headerFilter: "input" },
+      { title: "Found Location", field: "found_location", sorter: "string", width: 100 },
+      { title: "At AAC?", field: "at_AAC", sorter: "string", headerFilter: "input" },
+      { title: "Intake Date", field: "intake_date", sorter: "date", align: "center" },
+      { title: "Looks Like", field: "looks_like", align: "center", formatter: "string", headerFilter: "input" },
+      { title: "Type", field: "type", align: "center", formatter: "string", headerFilter: "input" },
+      { title: "Color", field: "color", align: "center", formatter: "string", headerFilter: "input" },
+      { title: "Sex", field: "sex", align: "center", formatter: "string", headerFilter: "input" },
+      { title: "Age", field: "age", align: "center", formatter: "string", headerFilter: "input" }
+    ],
+    
+    
+    rowClick: function (e, row) {
+      var rowClicked = row.getData();
+      console.log(rowClicked.id)
+      let rowMapPoint = rowClicked.found_location.split(',')
+      let rowmapPointParsed = [parseFloat(rowMapPoint[0]), parseFloat(rowMapPoint[1])]
+      clearAllMarkers();
+      if (rowClicked.type === "Dog") {
+        marker = new L.marker((rowmapPointParsed), { icon: doggyIcon })
+          .bindPopup("Animal_ID " + String(rowClicked.animal_ID))
+          markers.addLayer(marker);
+      }
+      else if (rowClicked.type === "Cat") {
+        marker = new L.marker((rowmapPointParsed), { icon: kittayIcon })
+          .bindPopup("Animal_ID " + String(rowClicked.animal_ID))
+          markers.addLayer(marker);
+      }
+   
+  }
+})
+  table.setData("/api/pets");
 
+  function onMapClick(e) {
+    marker.openPopup();
+  }
+  mymap.on('click', onMapClick);
 })
 
 

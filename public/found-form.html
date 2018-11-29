@@ -90,7 +90,8 @@
         <div class="row">
           <div class="col-md-8 ml-auto mr-auto">
             <h2 class="title">Found Pet Form:</h2>
-            <h5 class="description"></h5>Choose whether you have found a dog or a cat.
+            <span id="error_text"></span>
+            <h5 class="description"></h5>Choose whether you have found a dog or a cat and then fill out the information provided.
           </div>
         </div>
         <br>
@@ -124,6 +125,7 @@
                     <!--Lost Dog Criteria-->
                     <form class="contact-form" id='uploadForm' action='http://localhost:8080/upload' method='post' encType="multipart/form-data"></form>
                       <div class="row">
+
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Name</label>
