@@ -35,6 +35,7 @@ $(document).ready(function () {
       var clickedPoint=""
       var clickedPointString=""
       var clickedPointResponse=""
+      var clickedPointMarker=""
       function onMapClick(e) {
         
         if(Address.length>0){
