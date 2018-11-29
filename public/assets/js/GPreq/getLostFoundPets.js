@@ -63,7 +63,7 @@ $(document).ready(function () {
     placeholder: "No Data Set",
     columns: [
       { title: "Name", field: "name", sorter: "string", headerFilter: "input" },
-      { title: "Found Location", field: "found_location", sorter: "string", width: 100 },
+      { title: "Address", field: "Address", sorter: "string", width: 100 },
       { title: "At AAC?", field: "at_AAC", sorter: "string", headerFilter: "input" },
       { title: "Intake Date", field: "intake_date", sorter: "date", align: "center" },
       { title: "Looks Like", field: "looks_like", align: "center", formatter: "string", headerFilter: "input" },
