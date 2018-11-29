@@ -78,6 +78,7 @@ $(document).ready(function () {
         sex: $(".sex").val().trim(),
         age: $(".age").val().trim(),
         image_link: $("#photo").val().trim(),
+        Address: clickedPointResponse,
     };
     console.log(foundPet)
       $.post("/api/pets", foundPet,
