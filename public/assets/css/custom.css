@@ -18,5 +18,71 @@
   justify-content: center;
 }
 
+li:hover {
+  cursor: pointer;
+}
+
+.lost,
+.found,
+.results {
+  margin-top: -4%;
+}
+
+.map-container {
+  margin-top: -6%;
+}
+
+.lost-form{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lost-found {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.map-results {
+  margin-top: -2%;
+}
+
+.results-column {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.fileinput {
+  color: #9c27b0;
+}
+
+.photo {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+select {
+  text-align: center;
+  text-align-last: center;
+}
+option {
+  text-align: left;
+}
+
+.sex {
+  color: #6c757d;
+}
+
+.tabulator-col-content {
+  color: #9c27b0;
+}
+
 
 

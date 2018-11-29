@@ -72,7 +72,7 @@
       <div class="row">
         <div class="col-md-6">
           <h1 class="title">Search Our Database.</h1>
-          <h4>This site is connected to every major animal intake shelter in the greater Austin area and is updated continually every 24 hours. If your pet has been found, it will be here.</h4>
+          <h4>This site is connected to every major animal intake shelter in the greater Austin area and is updated every 24 hours. If your pet has been found, it will be here.</h4>
           <br>
           <button class="btn btn-primary btn-raised btn-lg continue" onclick="smoothScroll(document.getElementById('first'))">
             <i class="fas fa-angle-down"></i>  Continue
@@ -83,18 +83,42 @@
   </div>
 
   <!--Main Container-->
-  <div class="main main-raised" id="first">
+  <div class="main main-raised">
     <div class="jumbotron">
       <div class="section text-center">
-        <div class="row">
-          <div class="col-md-8 ml-auto mr-auto">
-            <h2 class="title">Search Our database:</h2>
+        <div class="row results-column">
+          <div class="col-md-8 ml-auto mr-auto results">
+            <h2 class="title">Lost/Found Database:</h2>
+            <h5 class="description">Search our database for all current lost and found pets. The location where the pet was lost or found will be located on the map. Below, there is also a table with an easy to check format </h5>
           </div>
           <!--Map-->
-          <div class="container map-container rounded">
+          <div class="container map-container map-results">
             <div id="map"></div>
+            <div id="first"></div>
           </div>
-          <div id="tabulator-table"></div>
+
+          <br>
+
+          <div class="profile-tabs lost-found">
+            <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link" id="dog-icon" role="tab" data-toggle="tab" onclick="smoothScroll(document.getElementById('second'))">
+                  <i class="material-icons">pets</i> Lost
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link cat-icon"  role="tab" data-toggle="tab">
+                  <i class="material-icons">pets</i> Found
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <br>
+          
+          <div class="container">
+            <div id="tabulator-table"></div>
+          </div>  
         </div>
       </div>
     </div>
