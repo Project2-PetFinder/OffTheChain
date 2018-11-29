@@ -22,7 +22,7 @@ module.exports = function(sequelize, Sequelize) {
         allowNull: false,
         len: [1]
       },
-      intake_date: {
+      found_date: {
         type:Sequelize.DATEONLY,
         allowNull: false,
         len: [1]
