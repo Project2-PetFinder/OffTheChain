@@ -46,7 +46,7 @@ app.post('/upload', function(req, res) {
 // =============================================================
 require("./routes/html-routes.js")(app)
 require("./routes/foundPet-api-routes.js")(app);
-
+require("./routes/lostPet-api-routes.js")(app)
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
