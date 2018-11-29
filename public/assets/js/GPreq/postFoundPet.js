@@ -35,7 +35,6 @@ $(document).ready(function () {
       var clickedPoint=""
       var clickedPointString=""
       var clickedPointResponse=""
-      var clickedPointMarker=""
       function onMapClick(e) {
         
         if(Address.length>0){
@@ -51,9 +50,9 @@ $(document).ready(function () {
           let geocodeRequest = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${clickedPointString}&key=${key}`;
           $.get(geocodeRequest).then(response => {
             clickedPointResponse = response.results[0].formatted_address;
-             if($(".dog-icon.active").val()==="dog"){
+             if($(".dog-icon.active")){
              clickedPointMarker = L.marker(clickedPoint, {icon:doggyIcon})}
-             else if($(".cat-icon.active").val()==="cat"){
+             else if($(".cat-icon.active")){
             clickedPointMarker = L.marker(clickedPoint, {icon:kittayIcon})}
              
              clickedPointMarker.addTo(mymap).bindPopup(`You clicked on: <br> ${clickedPointResponse}`).openPopup();
