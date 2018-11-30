@@ -34,7 +34,7 @@ $(document).ready(function () {
       var Address=[]
       var clickedPoint=""
       var clickedPointString=""
-      
+      var clickedPointResponse=""
       function onMapClick(e) {
         
         if(Address.length>0){
@@ -49,10 +49,10 @@ $(document).ready(function () {
         const searchAddress = address => {
           let geocodeRequest = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${clickedPointString}&key=${key}`;
           $.get(geocodeRequest).then(response => {
-            const clickedPointResponse = response.results[0].formatted_address;
-             if($(".petType").val()==="dog"){
+            clickedPointResponse = response.results[0].formatted_address;
+             if($(".dog-icon.active")){
              clickedPointMarker = L.marker(clickedPoint, {icon:doggyIcon})}
-             else if($(".petType").val()==="cat"){
+             else if($(".cat-icon.active")){
             clickedPointMarker = L.marker(clickedPoint, {icon:kittayIcon})}
              
              clickedPointMarker.addTo(mymap).bindPopup(`You clicked on: <br> ${clickedPointResponse}`).openPopup();
@@ -71,13 +71,14 @@ $(document).ready(function () {
         name: $(".pet-name").val().trim(),
         found_location:clickedPointString,
         at_AAC:"No",
-        intake_date:"11/17/2018",
+        found_date:$("#date-found").val().trim(),
         looks_like: $(".pet-type").val().trim(),
         type: "Dog",
         color: $(".color").val().trim(),
         sex: $(".sex").val().trim(),
         age: $(".age").val().trim(),
         image_link: $("#photo").val().trim(),
+        Address: clickedPointResponse,
     };
     console.log(foundPet)
       $.post("/api/pets", foundPet,
