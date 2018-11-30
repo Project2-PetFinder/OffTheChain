@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-
+  $(".reset").hide();
   var kittayIcon = L.icon({
     iconUrl: './assets/img/kittay.png', //"public/assets/img/kittay.png",
 
@@ -90,13 +90,14 @@ $(document).ready(function () {
           .bindPopup("Animal_ID " + String(rowClicked.animal_ID))
           markers.addLayer(marker);
       }
-   
+      $(".reset").show();
   }
 })
   table.setData("/api/pets");
 
   function onMapClick(e) {
     marker.openPopup();
+    
   }
   mymap.on('click', onMapClick);
 })
