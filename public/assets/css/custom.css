@@ -89,6 +89,11 @@ img {
 	width: 280px;
 	height: 200PX;
 }
+#tabulator-table .tabulator-row table img{
+  border:2px solid #ccc;
+  height:50px;
+  width: 50px;
+}
 
 
 
