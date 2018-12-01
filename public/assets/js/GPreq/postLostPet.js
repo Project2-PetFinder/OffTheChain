@@ -74,38 +74,7 @@ $(document).ready(function () {
         }
         mymap.on('click', onMapClick);
        
-      $(".submit").on("click", function (event) {
-        event.preventDefault();
-        var lostPet = {
-          name: $(".pet-name").val().trim(),
-          lost_location:clickedPointString,
-          at_AAC:"No",
-          lost_date:$("#date-lost").val().trim(),
-          looks_like: $(".pet-type").val().trim(),
-          type: "Dog",
-          color: $(".color").val().trim(),
-          sex: $(".sex").val().trim(),
-          age: $(".age").val().trim(),
-          image_link: $("#photo").val().trim(),
-          Address: clickedPointResponse,
-      };
-      console.log(lostPet)
-        $.post("/api/lostpets", lostPet,
-        function(data) {
-          $("#img").attr("src", data.image_link);  
-          $(".name").text(data.name);
-          $(".type").text(data.type);
-          $(".date_lost").text(data.lost_date );
-          $("#sex").text(data.sex);
-          $("#age").text(data.age);
-          $("#address").text(data.Address);
-          $("#results-modal").modal("toggle");     
-      })
-  })
-        
-});
-
-
+      
         $(".submit").on("click", function (event) {
           event.preventDefault();
           if (($(".pet-name").val()!=="") || clickedIcon ==="" || clickedPointResponse ==="") 
@@ -127,13 +96,13 @@ $(document).ready(function () {
           $.post("/api/lostpets", lostPet,
             function (data) {
             
-          $(".name").text(data.name);
-          $("#img").attr("src", data.image_link);
-          $(".date_lost").text(data.date );
-          $(".location").text(data.Address );
-          $("#results-modal").modal("toggle");
+            $(".name").text(data.name);
+            $("#img").attr("src", data.image_link);
+            $(".date_lost").text(data.date );
+            $(".location").text(data.Address );
+            $("#results-modal").modal("toggle");
 
-            })
+          })
           }else {
             document.getElementById('error_text').innerHTML = 'fill your name'
             console.log("empty fields");
@@ -152,6 +121,4 @@ $(document).ready(function () {
           }
         })
 
-    
-      
-});
+    });
