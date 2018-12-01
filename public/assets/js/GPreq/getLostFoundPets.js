@@ -33,12 +33,12 @@ $(document).ready(function () {
             let mapPointParsed = [parseFloat(mapPoint[0]), parseFloat(mapPoint[1])]
             if (data[i].type === "Dog") {
               marker = new L.marker((mapPointParsed), { icon: doggyIcon })
-                .bindPopup(String(data[i].Name))
+                .bindPopup(String(data[i].name))
                 markers.addLayer(marker);
             }
             else if (data[i].type === "Cat") {
               marker = new L.marker((mapPointParsed), { icon: kittayIcon })
-                .bindPopup(String(data[i].Name))
+                .bindPopup(String(data[i].name))
                 markers.addLayer(marker);
             }
           }
