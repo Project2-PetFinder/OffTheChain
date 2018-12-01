@@ -128,10 +128,12 @@ $(document).ready(function () {
           $.post("/api/lostpets", lostPet,
             function (data) {
             
-              $(".name").text(data.name);
-          $(".type").text(data.type );
-          $("#img").attr("src", data.image_link); 
+          $(".name").text(data.name);
+          $("#img").attr("src", data.image_link);
+          $(".date_lost").text(data.date );
+          $(".location").text(data.Address );
           $("#results-modal").modal("toggle");
+
             })
           }else {
             document.getElementById('error_text').innerHTML = 'fill your name'

@@ -171,25 +171,11 @@
                         </div>
                       </div><!--End of Second Row-->
 
-                      
                       <!--Photo upload-->
                       <div class="row upload">
                         <div class="col-md-6">
-                          <div class="form-group">
-                            <label class="bmd-label-floating">Image URL</label>
-                            <input type="text" id="photo" class="form-control color">
-                          </div>
-                        </div>
-                        <div class="col-md-6"> 
                           <label class="bmd-label-floating" >Picture</label>
-                          <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                            <div class="fileinput-new thumbnail img-raised"></div>
-                            <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
-                            <span class="btn btn-raised btn-round btn-file btn-primary">
-                              <span class="fileinput-new">Select image</span>
-                              <input type="file" id="photo" class="btn btn-raised btn-round btn-default btn-file" name="image_link" />
-                            </span>
-                          </div>  
+                          <input type="text" id="photo" class="form-control" required>
                         </div>
                       </div>
                       
@@ -222,19 +208,20 @@
   <div id="results-modal" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h3 class="modal-title"><strong>Success! Your pet has been added.</strong></h3>
-        </div>
-        <div class="modal-body">
-          <img id="img" src="" alt="">
-          <h3>Pet Criteria:</h3>
-          Name: <h4 class="name"><strong></strong></h4>
-          Date Lost: <h4 class="date_lost"><strong></strong></h4>
-          Location: <h4 id="address"></h4>   
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="button btn modal-button btn-primary" data-dismiss="modal">Close</button>
-        </div>
+          <div class="modal-header">
+            <h3 class="modal-title"><strong>Success! Your Pet was added.</strong></h3>
+          </div>
+          <div class="modal-body">
+            <img id="img" src="" alt="">
+            <br>  
+            Pet Name: <h4 class="name"><strong>Pet Name:</strong></h4>
+            Date Lost: <h4 class="date_lost">Date Lost:<strong></strong></h4>
+            Location: <h4 class="location"><strong></strong></h4>
+              
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="button btn modal-button btn-primary" data-dismiss="modal">Close</button>
+          </div>
       </div>
     </div>
   </div>
