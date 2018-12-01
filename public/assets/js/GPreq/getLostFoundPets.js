@@ -1,26 +1,5 @@
-function getMapResults(){
-  $.get("/api/pets",
-    function (data) {
-
-      for (var i = 0; i < data.length; i++) {
-        if (data[i].found_location) {
-          let mapPoint = data[i].found_location.split(',')
-          let mapPointParsed = [parseFloat(mapPoint[0]), parseFloat(mapPoint[1])]
-          if (data[i].type === "Dog") {
-            marker = new L.marker((mapPointParsed), { icon: doggyIcon })
-              .bindPopup("Animal_ID " + String(data[i].animal_ID))
-              markers.addLayer(marker);
-          }
-          else if (data[i].type === "Cat") {
-            marker = new L.marker((mapPointParsed), { icon: kittayIcon })
-              .bindPopup("Animal_ID " + String(data[i].animal_ID))
-              markers.addLayer(marker);
-          }
-        }
-      }
-    });
-}
 $(document).ready(function () {
+
   $(".reset").hide();
   var kittayIcon = L.icon({
     iconUrl: './assets/img/kittay.png', //"public/assets/img/kittay.png",
@@ -44,7 +23,28 @@ $(document).ready(function () {
   key = "AIzaSyD70EcFlRlgIbc1ARNvns5CszqjaUyQzVI";
   // initialize the map
   var mymap = L.map('map').setView([30.2672, -97.7431], 12);
-
+  function getMapResults(){
+    $.get("/api/pets",
+      function (data) {
+  
+        for (var i = 0; i < data.length; i++) {
+          if (data[i].found_location) {
+            let mapPoint = data[i].found_location.split(',')
+            let mapPointParsed = [parseFloat(mapPoint[0]), parseFloat(mapPoint[1])]
+            if (data[i].type === "Dog") {
+              marker = new L.marker((mapPointParsed), { icon: doggyIcon })
+                .bindPopup("Animal_ID " + String(data[i].animal_ID))
+                markers.addLayer(marker);
+            }
+            else if (data[i].type === "Cat") {
+              marker = new L.marker((mapPointParsed), { icon: kittayIcon })
+                .bindPopup("Animal_ID " + String(data[i].animal_ID))
+                markers.addLayer(marker);
+            }
+          }
+        }
+      });
+  }
   // load a tile layer
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiamN0b2JleSIsImEiOiJjam9kNGs3MzMwczI2M3BwYjVtaXRpZ2l1In0.sxKzZ76nyy_PN8ETEnoKKA', {
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
