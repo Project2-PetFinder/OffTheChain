@@ -171,20 +171,12 @@
                         </div>
                       </div><!--End of Second Row-->
 
-                      
-                      
+
                       <!--Photo upload-->
                       <div class="row upload">
-                        <div class="col-md-6"> 
+                        <div class="col-md-6">
                           <label class="bmd-label-floating" >Picture</label>
-                          <div class="fileinput fileinput-new text-center" data-provides="fileinput">
-                            <div class="fileinput-new thumbnail img-raised"></div>
-                            <div class="fileinput-preview fileinput-exists thumbnail img-raised"></div>
-                            <span class="btn btn-raised btn-round btn-file btn-primary">
-                              <span class="fileinput-new">Select image</span>
-                              <input type="file" id="photo" class="btn btn-raised btn-round btn-default btn-file" name="image_link" />
-                            </span>
-                          </div>  
+                          <input type="text" id="photo" class="form-control" required>
                         </div>
                       </div>
                       
@@ -218,13 +210,15 @@
     <div class="modal-dialog">
       <div class="modal-content">
           <div class="modal-header">
-              <h2 class="modal-title"><strong>Pet Details: </strong></h2>
+            <h3 class="modal-title"><strong>Success! Your Pet was added.</strong></h3>
           </div>
           <div class="modal-body">
-              <h2 class="name"><strong>Pet Name: </strong></h2>
-              <h4 class="type"><strong>Pet Name: </strong></h4>
-              <img id="img" src="" alt="">
-              <h4 class="quote"></h4>
+            <img id="img" src="" alt="">
+            <br>  
+            Pet Name: <h4 class="name"><strong>Pet Name:</strong></h4>
+            Date Lost: <h4 class="date_lost">Date Lost:<strong></strong></h4>
+            Location: <h4 class="location"><strong></strong></h4>
+              
           </div>
           <div class="modal-footer">
               <button type="button" class="button btn modal-button btn-primary" data-dismiss="modal">Close</button>
