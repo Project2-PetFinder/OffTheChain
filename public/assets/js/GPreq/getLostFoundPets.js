@@ -98,7 +98,7 @@ $(document).ready(function () {
     layout: "fitColumns",
     placeholder: "No Data Set",
     columns: [
-      { title: "Picture",field: "image_link", formatter:"image",align:"center",},
+      { title: "Picture",field: "image_link", formatter:"image",align:"center",width:275},
       { title: "Name", field: "name", sorter: "string", headerFilter: "input" },
       { title: "Type", field: "type", align: "center", formatter: "string", headerFilter: "input" },
       { title: "Address Found", field: "Address", sorter: "string", width: 125 },
