@@ -129,19 +129,19 @@
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Name</label>
-                            <input type="text" class="form-control pet-name">
+                            <input type="text" class="form-control pet-name" required>
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Breed</label>
-                            <input type="text" class="form-control pet-type">
+                            <input type="text" class="form-control pet-type" required>
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Color</label>
-                            <input type="text" class="form-control color">
+                            <input type="text" class="form-control color" required>
                           </div>
                         </div>
                       </div><!--End of First Row-->                      
@@ -149,13 +149,13 @@
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Sex</label>
-                            <input type="select" class="form-control sex">
+                            <input type="select" class="form-control sex" required>
                           </div>
                         </div>
                         <div class="col-md-4">
                           <div class="form-group">
                             <label class="bmd-label-floating">Age</label>
-                            <input type="number" class="form-control age">
+                            <input type="number" class="form-control age" required>
                           </div>
                         </div>
                         <div class="col-md-4">
@@ -166,17 +166,15 @@
                         </div>
                       </div><!--End of Second Row-->
 
-                      <!--Photo Upload-->
-                      <div class="row upload" >
-                        <div class="col-md-4">
-                          <div class="form-group" >
+                      <!--Photo upload-->
+                      <div class="row upload">
+                          <div class="col-md-6">
                             <label class="bmd-label-floating" >Picture</label>
-                            <form action="/upload" class="dropzone">
-                              <input type="file" id="photo">
-                            </form>                     
+                            <input type="text" id="photo" class="form-control" required>
                           </div>
-                        </div >
-                      </div><!--End of Third Row-->
+                      </div>
+
+                      
 
                       <br><br><br><br>
 
@@ -203,6 +201,27 @@
       </div>
     </div>
   </div><!-- End Of Container Div-->
+
+  <div id="results-modal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+              <h3 class="modal-title"><strong>Success! The Pet was added.</strong></h3>
+            </div>
+            <div class="modal-body">
+              <img id="img" src="" alt="">
+              <br>  
+              Pet Name: <h4 class="foundName"><strong>Pet Name:</strong></h4>
+              Date Found: <h4 class="date_found">Date Lost:<strong></strong></h4>
+              Location: <h4 class="locationFound"><strong></strong></h4>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="button btn modal-button btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+      </div>
+    </div>
 
   <!--Footer-->
   <footer class="footer footer-default" >

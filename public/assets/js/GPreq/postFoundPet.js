@@ -97,7 +97,11 @@ $(document).ready(function () {
   
         $.post("/api/pets", foundPet,
           function (data) {
-            alert("Your pet has been added to the our database!")
+           $(".foundName").text(data.name);
+           $("#img").attr("src", data.image_link);
+           $(".date_found").text(data.date );
+           $(".locationFound").text(data.Address );
+           $("#results-modal").modal("toggle");
           })
         }else {
           document.getElementById('error_text').innerHTML = 'fill your name'
