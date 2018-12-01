@@ -99,9 +99,9 @@ $(document).ready(function () {
     placeholder: "No Data Set",
     columns: [
       { title: "Name", field: "name", sorter: "string", headerFilter: "input" },
-      { title: "Address Found", field: "Address", sorter: "string", width: 200 },
+      { title: "Address Found", field: "Address", sorter: "string", width: 175 },
       { title: "At AAC?", field: "at_AAC", sorter: "string", headerFilter: "input" },
-      { title: "Intake Date", field: "date", sorter: "date", align: "center" },
+      { title: "Date Lost/Found", field: "date", sorter: "date", align: "center" },
       { title: "Looks Like", field: "looks_like", align: "center", formatter: "string", headerFilter: "input" },
       { title: "Type", field: "type", align: "center", formatter: "string", headerFilter: "input" },
       { title: "Color", field: "color", align: "center", formatter: "string", headerFilter: "input" },
