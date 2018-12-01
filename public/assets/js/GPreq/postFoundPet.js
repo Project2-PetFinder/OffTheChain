@@ -79,7 +79,7 @@ $(document).ready(function () {
         name: $(".pet-name").val().trim(),
         found_location:clickedPointString,
         at_AAC:"No",
-        found_date:$("#date-found").val().trim(),
+        date:$("#date-found").val().trim(),
         looks_like: $(".pet-type").val().trim(),
         type: "Dog",
         color: $(".color").val().trim(),
