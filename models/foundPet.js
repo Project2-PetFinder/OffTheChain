@@ -22,7 +22,7 @@ module.exports = function(sequelize, Sequelize) {
         allowNull: false,
         len: [1]
       },
-      found_date: {
+      date: {
         type:Sequelize.DATEONLY,
         allowNull: false,
         len: [1]
