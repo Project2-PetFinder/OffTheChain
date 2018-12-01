@@ -107,7 +107,7 @@ $(document).ready(function () {
       { title: "Color", field: "color", align: "center", formatter: "string", headerFilter: "input" },
       { title: "Sex", field: "sex", align: "center", formatter: "string", headerFilter: "input" },
       { title: "Age", field: "age", align: "center", formatter: "string", headerFilter: "input" },
-      { title: "Picture",field: "image_link", formatter:"image",align:"center",width:120,minWidth :50, variableHeight:true},
+      { title: "Picture",field: "image_link", formatter:"image",align:"center",maxWidth:75,maxHeight :75, variableHeight:true},
     ],
     
     
