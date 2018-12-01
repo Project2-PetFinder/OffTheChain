@@ -1,11 +1,5 @@
 $(document).ready(function () {
   mapType=""
-  $(".lost").on("click", function (event) {
-    mapType="Lost"
-  })
-  $(".found").on("click", function (event) {
-    mapType="Found"
-  })
   $(".reset").hide();
   var kittayIcon = L.icon({
     iconUrl: './assets/img/kittay.png', //"public/assets/img/kittay.png",
@@ -81,11 +75,16 @@ $(document).ready(function () {
     accessToken: 'pk.eyJ1IjoiamN0b2JleSIsImEiOiJjam9kNGs3MzMwczI2M3BwYjVtaXRpZ2l1In0.sxKzZ76nyy_PN8ETEnoKKA'
   }).addTo(mymap);
   var markers = new L.FeatureGroup();
-  if(mapType==="Found"){
-  getFoundMapResults();}
-  else if(mapType==="Lost"){
+  $(".lost").on("click", function (event) {
     getLostMapResults()
-  }
+    table.setData("/api/lostpets");
+    mapType="Lost"
+  })
+  $(".found").on("click", function (event) {
+    getFoundMapResults();
+    table.setData("/api/pets");
+    mapType="Found"
+  })
     mymap.addLayer(markers);
     function clearAllMarkers(){
       markers.clearLayers();
@@ -116,12 +115,12 @@ $(document).ready(function () {
       clearAllMarkers();
       if (rowClicked.type === "Dog") {
         marker = new L.marker((rowmapPointParsed), { icon: doggyIcon })
-          .bindPopup("Animal_ID " + String(rowClicked.animal_ID))
+          .bindPopup(String(rowClicked.name))
           markers.addLayer(marker);
       }
       else if (rowClicked.type === "Cat") {
         marker = new L.marker((rowmapPointParsed), { icon: kittayIcon })
-          .bindPopup("Animal_ID " + String(rowClicked.animal_ID))
+          .bindPopup(String(rowClicked.name))
           markers.addLayer(marker);
       }
       $(".reset").show();
