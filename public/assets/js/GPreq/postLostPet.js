@@ -71,28 +71,46 @@ $(document).ready(function () {
         }
         mymap.on('click', onMapClick);
        
-      $(".submit").on("click", function (event) {
-        event.preventDefault();
-        var lostPet = {
-          name: $(".pet-name").val().trim(),
-          lost_location:clickedPointString,
-          at_AAC:"No",
-          date:$("#date-lost").val().trim(),
-          looks_like: $(".pet-type").val().trim(),
-          type: clickedIcon,
-          color: $(".color").val().trim(),
-          sex: $(".sex").val().trim(),
-          age: $(".age").val().trim(),
-          image_link: $("#photo").val().trim(),
-          Address: clickedPointResponse,
-      };
-      console.log(lostPet)
-        $.post("/api/lostpets", lostPet,
-        function(data) {
-            
-            alert("Your pet has been added to the our database!")
-            
-    })
-  })
-        
-  });
+
+        $(".submit").on("click", function (event) {
+          event.preventDefault();
+          if (($(".pet-name").val()!=="") || clickedIcon ==="" || clickedPointResponse ==="") 
+    {
+          var lostPet = {
+            name: $(".pet-name").val().trim(),
+            lost_location:clickedPointString,
+            at_AAC:"No",
+            lost_date:$("#date-lost").val().trim(),
+            looks_like: $(".pet-type").val().trim(),
+            type: clickedIcon,
+            color: $(".color").val().trim(),
+            sex: $(".sex").val().trim(),
+            age: $(".age").val().trim(),
+            image_link: $("#photo").val().trim(),
+            Address: clickedPointResponse,
+          };
+    
+          $.post("/api/pets", foundPet,
+            function (data) {
+              alert("Your pet has been added to the our database!")
+            })
+          }else {
+            document.getElementById('error_text').innerHTML = 'fill your name'
+            console.log("empty fields");
+            if ($(".pet-name").val()=="")
+            {
+            alert(" Please enter the pet name");
+            }
+            else if (clickedIcon =="") // dog.value == "" && cat.value == ""
+            {
+            alert(" Please select the pet type");
+            }
+            else
+            {
+              alert("Please enter location");
+              }
+          }
+        })
+      
+      });
+
