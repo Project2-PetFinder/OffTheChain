@@ -138,7 +138,7 @@
                             <input type="text" class="form-control pet-type" required>
                           </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                           <div class="form-group">
                             <label class="bmd-label-floating">Pet Color</label>
                             <input type="text" class="form-control color" required>
@@ -148,8 +148,12 @@
                       <div class="row">
                         <div class="col-md-4">
                           <div class="form-group">
-                            <label class="bmd-label-floating">Sex</label>
-                            <input type="select" class="form-control sex" required>
+                            <label class="bmd-label-floating">Sex</label>                    
+                            <select class="form-control selectpicker required" data-style="select-with-transition" title="" data-size="7"> 
+                              <option disabled selected value="sex" class="sex"></option>
+                              <option class="male">Male</option>
+                              <option class="female">Female</option>
+                            </select>
                           </div>
                         </div>
                         <div class="col-md-4">
@@ -168,21 +172,22 @@
 
                       <!--Photo upload-->
                       <div class="row upload">
-                          <div class="col-md-6">
-                            <label class="bmd-label-floating" >Picture</label>
+                        <div class="col-md-4">
+                          <div class="form-group">
+                            <label class="bmd-label-floating" >Image Url</label>
                             <input type="text" id="photo" class="form-control" required>
                           </div>
+                        </div>
                       </div>
 
                       
-
                       <br><br><br><br>
 
                       <div class="main main-raised">
                         <div class="jumbotron">
                           <div class="section text-center">
                             <h2 class="title found">Found Location:</h2>
-                            <h5 class="description"></h5>Click on the map where the pet was lost.
+                            <h5 class="description"></h5>Click on the map where the pet was found.
                           </div>
                           <div class="container map-container rounded">
                             <div id="map"></div>
@@ -210,14 +215,17 @@
             </div>
             <div class="modal-body">
               <img id="img" src="" alt="">
-              <br>  
-              Pet Name: <h4 class="foundName"><strong>Pet Name:</strong></h4>
+              <br><br>
               Date Found: <h4 class="date_found">Date Lost:<strong></strong></h4>
-              Location: <h4 class="locationFound"><strong></strong></h4>
-                
+              Location: <h4 class="locationFound"><strong></strong></h4>  
             </div>
+            <script type="text/javascript">
+              function pageRedirect() {
+                window.location.href = "/map-results.html";
+              }      
+            </script> 
             <div class="modal-footer">
-                <button type="button" class="button btn modal-button btn-primary" data-dismiss="modal">Close</button>
+                <button type="button" onclick="pageRedirect()" class="button btn modal-button btn-primary" data-dismiss="modal">Close</button>
             </div>
         </div>
       </div>
