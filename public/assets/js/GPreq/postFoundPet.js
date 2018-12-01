@@ -92,7 +92,7 @@ $(document).ready(function () {
           Address: clickedPointResponse,
         };
   
-        $.post("/api/pets", foundPet,
+        $.post("/api/pets", lostPet,
           function (data) {
             alert("Your pet has been added to the our database!")
           })
