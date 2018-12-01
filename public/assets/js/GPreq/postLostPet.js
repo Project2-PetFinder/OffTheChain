@@ -56,6 +56,9 @@ $(document).ready(function () {
             let geocodeRequest = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${clickedPointString}&key=${key}`;
             $.get(geocodeRequest).then(response => {
               clickedPointResponse = response.results[0].formatted_address;
+              if(clickedIcon===""){
+                alert("Please select the type of lost pet you are reporting using the dog/cat icons.")
+              }
               if(clickedIcon==="Dog"){
                clickedPointMarker = L.marker(clickedPoint, {icon:doggyIcon})}
                else if(clickedIcon==="Cat"){
