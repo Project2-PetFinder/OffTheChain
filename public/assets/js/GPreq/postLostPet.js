@@ -74,6 +74,38 @@ $(document).ready(function () {
         }
         mymap.on('click', onMapClick);
        
+<<<<<<< HEAD
+      $(".submit").on("click", function (event) {
+        event.preventDefault();
+        var lostPet = {
+          name: $(".pet-name").val().trim(),
+          lost_location:clickedPointString,
+          at_AAC:"No",
+          lost_date:$("#date-lost").val().trim(),
+          looks_like: $(".pet-type").val().trim(),
+          type: "Dog",
+          color: $(".color").val().trim(),
+          sex: $(".sex").val().trim(),
+          age: $(".age").val().trim(),
+          image_link: $("#photo").val().trim(),
+          Address: clickedPointResponse,
+      };
+      console.log(lostPet)
+        $.post("/api/lostpets", lostPet,
+        function(data) {
+          $("#img").attr("src", data.image_link);  
+          $(".name").text(data.name);
+          $(".type").text(data.type);
+          $(".date_lost").text(data.lost_date );
+          $("#sex").text(data.sex);
+          $("#age").text(data.age);
+          $("#address").text(data.Address);
+          $("#results-modal").modal("toggle");     
+      })
+  })
+        
+});
+=======
 
         $(".submit").on("click", function (event) {
           event.preventDefault();
@@ -126,3 +158,4 @@ $(document).ready(function () {
 });
 
 
+>>>>>>> 7babcac0597160e9be7b539d50874906c99b3d81
