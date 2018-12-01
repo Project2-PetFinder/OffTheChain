@@ -35,6 +35,13 @@ $(document).ready(function () {
         var clickedPoint=""
         var clickedPointString=""
         var clickedPointResponse=""
+        var clickedIcon=""
+      $(".dog-icon").on("click", function (event) {
+        clickedIcon="Dog"
+      })
+      $(".cat-icon").on("click", function (event) {
+        clickedIcon="Cat"
+      })
         function onMapClick(e) {
           
           if(Address.length>0){
@@ -49,9 +56,9 @@ $(document).ready(function () {
             let geocodeRequest = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${clickedPointString}&key=${key}`;
             $.get(geocodeRequest).then(response => {
               clickedPointResponse = response.results[0].formatted_address;
-               if($(".dog-icon.active")){
+              if(clickedIcon==="Dog"){
                clickedPointMarker = L.marker(clickedPoint, {icon:doggyIcon})}
-               else if($(".cat-icon.active")){
+               else if(clickedIcon==="Cat"){
               clickedPointMarker = L.marker(clickedPoint, {icon:kittayIcon})}
                
                clickedPointMarker.addTo(mymap).bindPopup(`You clicked on: <br> ${clickedPointResponse}`).openPopup();
@@ -64,31 +71,51 @@ $(document).ready(function () {
         }
         mymap.on('click', onMapClick);
        
-      $(".submit").on("click", function (event) {
-        event.preventDefault();
-        var lostPet = {
-          name: $(".pet-name").val().trim(),
-          lost_location:clickedPointString,
-          at_AAC:"No",
-          lost_date:$("#date-lost").val().trim(),
-          looks_like: $(".pet-type").val().trim(),
-          type: "Dog",
-          color: $(".color").val().trim(),
-          sex: $(".sex").val().trim(),
-          age: $(".age").val().trim(),
-          image_link: $("#photo").val().trim(),
-          Address: clickedPointResponse,
-      };
-      console.log(lostPet)
-        $.post("/api/lostpets", lostPet,
-        function(data) {
+
+        $(".submit").on("click", function (event) {
+          event.preventDefault();
+          if (($(".pet-name").val()!=="") || clickedIcon ==="" || clickedPointResponse ==="") 
+    {
+          var lostPet = {
+            name: $(".pet-name").val().trim(),
+            lost_location:clickedPointString,
+            at_AAC:"No",
+            lost_date:$("#date-lost").val().trim(),
+            looks_like: $(".pet-type").val().trim(),
+            type: clickedIcon,
+            color: $(".color").val().trim(),
+            sex: $(".sex").val().trim(),
+            age: $(".age").val().trim(),
+            image_link: $("#photo").val().trim(),
+            Address: clickedPointResponse,
+          };
+    
+          $.post("/api/pets", foundPet,
+            function (data) {
             
-          $(".name").text(data.name);
+              $(".name").text(data.name);
           $(".type").text(data.type );
           $("#img").attr("src", data.image_link); 
           $("#results-modal").modal("toggle");
-            
-      })
-  })
-        
-});
+            })
+          }else {
+            document.getElementById('error_text').innerHTML = 'fill your name'
+            console.log("empty fields");
+            if ($(".pet-name").val()=="")
+            {
+            alert(" Please enter the pet name");
+            }
+            else if (clickedIcon =="") // dog.value == "" && cat.value == ""
+            {
+            alert(" Please select the pet type");
+            }
+            else
+            {
+              alert("Please enter location");
+              }
+          }
+        })
+      
+      });
+
+
