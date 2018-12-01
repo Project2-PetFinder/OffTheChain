@@ -82,6 +82,7 @@ $(document).ready(function () {
         if (($(".pet-name").val()!=="") || clickedIcon ==="" || clickedPointResponse ==="")
   {
         var foundPet = {
+          name: $(".pet-name").val().trim(),
           found_location:clickedPointString,
           at_AAC:"No",
           date:$("#date-found").val().trim(),
