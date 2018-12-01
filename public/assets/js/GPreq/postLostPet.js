@@ -90,7 +90,7 @@ $(document).ready(function () {
             Address: clickedPointResponse,
           };
     
-          $.post("/api/pets", lostPet,
+          $.post("/api/lostpets", lostPet,
             function (data) {
             
               $(".name").text(data.name);
