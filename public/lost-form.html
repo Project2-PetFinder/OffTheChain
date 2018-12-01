@@ -216,11 +216,15 @@
             <br>  
             Pet Name: <h4 class="name"><strong>Pet Name:</strong></h4>
             Date Lost: <h4 class="date_lost">Date Lost:<strong></strong></h4>
-            Location: <h4 class="location"><strong></strong></h4>
-              
+            Location: <h4 class="location"><strong></strong></h4>  
           </div>
+          <script type="text/javascript">
+            function pageRedirect() {
+              window.location.href = "/map-results.html";
+            }      
+          </script> 
           <div class="modal-footer">
-              <button type="button" class="button btn modal-button btn-primary" data-dismiss="modal">Close</button>
+              <button type="button" onclick="pageRedirect()" class="button btn modal-button btn-primary" data-dismiss="modal">Close</button>
           </div>
       </div>
     </div>

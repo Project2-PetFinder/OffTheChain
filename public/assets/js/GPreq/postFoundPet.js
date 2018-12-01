@@ -82,7 +82,6 @@ $(document).ready(function () {
         if (($(".pet-name").val()!=="") || clickedIcon ==="" || clickedPointResponse ==="")
   {
         var foundPet = {
-          name: $(".pet-name").val().trim(),
           found_location:clickedPointString,
           at_AAC:"No",
           date:$("#date-found").val().trim(),
@@ -97,7 +96,6 @@ $(document).ready(function () {
   
         $.post("/api/pets", foundPet,
           function (data) {
-           $(".foundName").text(data.name);
            $("#img").attr("src", data.image_link);
            $(".date_found").text(data.date );
            $(".locationFound").text(data.Address );
