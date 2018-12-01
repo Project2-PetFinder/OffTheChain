@@ -80,9 +80,9 @@ $(document).ready(function () {
   {
         var foundPet = {
           name: $(".pet-name").val().trim(),
-          lost_location:clickedPointString,
+          found_location:clickedPointString,
           at_AAC:"No",
-          lost_date:$("#date-found").val().trim(),
+          found_date:$("#date-found").val().trim(),
           looks_like: $(".pet-type").val().trim(),
           type: clickedIcon,
           color: $(".color").val().trim(),
