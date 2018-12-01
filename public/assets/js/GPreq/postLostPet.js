@@ -80,7 +80,7 @@ $(document).ready(function () {
             name: $(".pet-name").val().trim(),
             lost_location:clickedPointString,
             at_AAC:"No",
-            lost_date:$("#date-lost").val().trim(),
+            date:$("#date-lost").val().trim(),
             looks_like: $(".pet-type").val().trim(),
             type: clickedIcon,
             color: $(".color").val().trim(),
@@ -90,7 +90,7 @@ $(document).ready(function () {
             Address: clickedPointResponse,
           };
     
-          $.post("/api/pets", foundPet,
+          $.post("/api/lostpets", lostPet,
             function (data) {
             
               $(".name").text(data.name);
