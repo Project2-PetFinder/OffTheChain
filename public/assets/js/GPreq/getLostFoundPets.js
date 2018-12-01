@@ -92,7 +92,7 @@ $(document).ready(function () {
   })
     mymap.addLayer(markers);
     
-  
+  var rowMapPoint=""
   var table = new Tabulator("#tabulator-table", {
     height: "311px",
     layout: "fitColumns",
@@ -114,9 +114,9 @@ $(document).ready(function () {
       var rowClicked = row.getData();
       console.log(rowClicked.id)
       if(mapType==="Found"){
-      let rowMapPoint = rowClicked.found_location.split(',')}
+      rowMapPoint = rowClicked.found_location.split(',')}
       else if(mapType==="Lost"){
-      let rowMapPoint = rowClicked.lost_location.split(',')
+      rowMapPoint = rowClicked.lost_location.split(',')
       }
       let rowmapPointParsed = [parseFloat(rowMapPoint[0]), parseFloat(rowMapPoint[1])]
       clearAllMarkers();

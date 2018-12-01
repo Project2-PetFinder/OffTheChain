@@ -79,7 +79,7 @@ $(document).ready(function () {
           at_AAC:"No",
           date:$("#date-lost").val().trim(),
           looks_like: $(".pet-type").val().trim(),
-          type: "Dog",
+          type: clickedIcon,
           color: $(".color").val().trim(),
           sex: $(".sex").val().trim(),
           age: $(".age").val().trim(),
