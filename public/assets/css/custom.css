@@ -80,8 +80,8 @@ option {
   color: #6c757d;
 }
 
-.tabulator-col-content {
-  color: #9c27b0;
+.tabulator-header {
+  background: #9c27b0;
 }
 
 

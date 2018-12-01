@@ -92,7 +92,11 @@ $(document).ready(function () {
     
           $.post("/api/pets", foundPet,
             function (data) {
-              alert("Your pet has been added to the our database!")
+            
+              $(".name").text(data.name);
+          $(".type").text(data.type );
+          $("#img").attr("src", data.image_link); 
+          $("#results-modal").modal("toggle");
             })
           }else {
             document.getElementById('error_text').innerHTML = 'fill your name'
@@ -113,4 +117,5 @@ $(document).ready(function () {
         })
       
       });
+
 
