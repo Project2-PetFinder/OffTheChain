@@ -82,12 +82,14 @@ $(document).ready(function () {
       console.log(lostPet)
         $.post("/api/lostpets", lostPet,
         function(data) {
-            
+          $("#img").attr("src", data.image_link);  
           $(".name").text(data.name);
-          $(".type").text(data.type );
-          $("#img").attr("src", data.image_link); 
-          $("#results-modal").modal("toggle");
-            
+          $(".type").text(data.type);
+          $(".date_lost").text(data.lost_date );
+          $("#sex").text(data.sex);
+          $("#age").text(data.age);
+          $("#address").text(data.Address);
+          $("#results-modal").modal("toggle");     
       })
   })
         
