@@ -79,7 +79,7 @@ $(document).ready(function () {
 
       $(".submit").on("click", function (event) {
         event.preventDefault();
-        if (($(".pet-name").val()!=="") || clickedIcon ==="" || clickedPointResponse ==="")
+        if (($(".pet-name").val()!=="") && (clickedIcon ==="Dog" || clickedIcon ==="Cat") && clickedPointResponse !=="")
   {
         var foundPet = {
           name: $(".pet-name").val().trim(),
@@ -106,7 +106,7 @@ $(document).ready(function () {
           {
           alert(" Please enter the pet name");
           }
-          else if (clickedIcon =="") 
+          else if (clickedIcon !=="Dog"  && clickedIcon !== "Cat") 
           {
           alert(" Please select the pet type");
           }

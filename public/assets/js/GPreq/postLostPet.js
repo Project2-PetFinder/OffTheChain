@@ -77,7 +77,7 @@ $(document).ready(function () {
 
         $(".submit").on("click", function (event) {
           event.preventDefault();
-          if (($(".pet-name").val()!=="") || clickedIcon ==="" || clickedPointResponse ==="") 
+          if (($(".pet-name").val()!=="") && (clickedIcon ==="Dog" || clickedIcon ==="Cat") && clickedPointResponse !=="")
     {
           var lostPet = {
             name: $(".pet-name").val().trim(),
@@ -104,23 +104,28 @@ $(document).ready(function () {
 
             })
           }else {
-            document.getElementById('error_text').innerHTML = 'fill your name'
-            console.log("empty fields");
-            if ($(".pet-name").val()=="")
-            {
-            alert(" Please enter the pet name");
-            }
-            else if (clickedIcon =="") // dog.value == "" && cat.value == ""
-            {
-            alert(" Please select the pet type");
-            }
-            else
-            {
-              alert("Please enter location");
-              }
-          }
-        })
-      
-      });
-
+            // document.getElementById('error_text').innerHTML = 'fill your name'
+            // console.log("empty fields");
+             if ($(".pet-name").val()=="")
+           {
+           alert(" Please enter the pet name");
+           }
+           else if (clickedIcon !=="Dog"  && clickedIcon !== "Cat") 
+           {
+           alert(" Please select the pet type");
+           }
+           else
+           {
+             alert("Please enter location");
+             }
+           }
+         })
+       
+       });
+ 
+ 
+ 
+ 
+ 
+ Collapse 
 
