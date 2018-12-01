@@ -74,7 +74,6 @@ $(document).ready(function () {
         }
         mymap.on('click', onMapClick);
        
-<<<<<<< HEAD
       $(".submit").on("click", function (event) {
         event.preventDefault();
         var lostPet = {
