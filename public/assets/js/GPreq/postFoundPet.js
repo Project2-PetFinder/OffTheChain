@@ -78,11 +78,11 @@ $(document).ready(function () {
         event.preventDefault();
         if (($(".pet-name").val()!=="") || clickedIcon ==="" || clickedPointResponse ==="")
   {
-        var lostPet = {
+        var foundPet = {
           name: $(".pet-name").val().trim(),
           lost_location:clickedPointString,
           at_AAC:"No",
-          lost_date:$("#date-lost").val().trim(),
+          lost_date:$("#date-found").val().trim(),
           looks_like: $(".pet-type").val().trim(),
           type: clickedIcon,
           color: $(".color").val().trim(),
