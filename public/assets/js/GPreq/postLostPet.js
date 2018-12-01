@@ -35,6 +35,13 @@ $(document).ready(function () {
         var clickedPoint=""
         var clickedPointString=""
         var clickedPointResponse=""
+        var clickedIcon=""
+      $(".dog-icon").on("click", function (event) {
+        clickedIcon="Dog"
+      })
+      $(".cat-icon").on("click", function (event) {
+        clickedIcon="Cat"
+      })
         function onMapClick(e) {
           
           if(Address.length>0){
@@ -49,9 +56,9 @@ $(document).ready(function () {
             let geocodeRequest = `https://maps.googleapis.com/maps/api/geocode/json?latlng=${clickedPointString}&key=${key}`;
             $.get(geocodeRequest).then(response => {
               clickedPointResponse = response.results[0].formatted_address;
-               if($(".dog-icon.active")){
+              if(clickedIcon==="Dog"){
                clickedPointMarker = L.marker(clickedPoint, {icon:doggyIcon})}
-               else if($(".cat-icon.active")){
+               else if(clickedIcon==="Cat"){
               clickedPointMarker = L.marker(clickedPoint, {icon:kittayIcon})}
                
                clickedPointMarker.addTo(mymap).bindPopup(`You clicked on: <br> ${clickedPointResponse}`).openPopup();
@@ -64,9 +71,10 @@ $(document).ready(function () {
         }
         mymap.on('click', onMapClick);
        
+
         $(".submit").on("click", function (event) {
           event.preventDefault();
-          if (($(".pet-name").val()!=="") || clickedIcon ==="" || clickedPointResponse ==="") //dog.value !==="" && cat.value !== "" && ($(".found_location").val() !=="") // && Address && color && sex//
+          if (($(".pet-name").val()!=="") || clickedIcon ==="" || clickedPointResponse ==="") 
     {
           var lostPet = {
             name: $(".pet-name").val().trim(),
@@ -74,7 +82,7 @@ $(document).ready(function () {
             at_AAC:"No",
             lost_date:$("#date-lost").val().trim(),
             looks_like: $(".pet-type").val().trim(),
-            type: "Dog",
+            type: clickedIcon,
             color: $(".color").val().trim(),
             sex: $(".sex").val().trim(),
             age: $(".age").val().trim(),
@@ -105,3 +113,4 @@ $(document).ready(function () {
         })
       
       });
+

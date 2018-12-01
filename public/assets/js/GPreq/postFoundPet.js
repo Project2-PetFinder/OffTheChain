@@ -73,9 +73,10 @@ $(document).ready(function () {
       mymap.on('click', onMapClick);
       
      
+
       $(".submit").on("click", function (event) {
         event.preventDefault();
-        if (($(".pet-name").val()!=="") || clickedIcon ==="" || clickedPointResponse ==="") //dog.value !==="" && cat.value !== "" && ($(".found_location").val() !=="") // && Address && color && sex//
+        if (($(".pet-name").val()!=="") || clickedIcon ==="" || clickedPointResponse ==="")
   {
         var lostPet = {
           name: $(".pet-name").val().trim(),
@@ -83,7 +84,7 @@ $(document).ready(function () {
           at_AAC:"No",
           lost_date:$("#date-lost").val().trim(),
           looks_like: $(".pet-type").val().trim(),
-          type: "Dog",
+          type: clickedIcon,
           color: $(".color").val().trim(),
           sex: $(".sex").val().trim(),
           age: $(".age").val().trim(),
@@ -102,7 +103,7 @@ $(document).ready(function () {
           {
           alert(" Please enter the pet name");
           }
-          else if (clickedIcon =="") // dog.value == "" && cat.value == ""
+          else if (clickedIcon =="") 
           {
           alert(" Please select the pet type");
           }
@@ -114,3 +115,4 @@ $(document).ready(function () {
       })
     
     }); 
+

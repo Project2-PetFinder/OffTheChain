@@ -17,7 +17,7 @@ module.exports = function(sequelize, Sequelize) {
         allowNull: false,
         len: [1]
       },
-      lost_date: {
+      date: {
         type:Sequelize.DATEONLY,
         allowNull: false,
         len: [1]
