@@ -51,7 +51,7 @@ $(document).ready(function () {
   
         for (var i = 0; i < data.length; i++) {
           if (data[i].found_location) {
-            let mapPoint = data[i].found_location.split(',')
+            let mapPoint = data[i].lost_location.split(',')
             let mapPointParsed = [parseFloat(mapPoint[0]), parseFloat(mapPoint[1])]
             if (data[i].type === "Dog") {
               marker = new L.marker((mapPointParsed), { icon: doggyIcon })
@@ -75,20 +75,23 @@ $(document).ready(function () {
     accessToken: 'pk.eyJ1IjoiamN0b2JleSIsImEiOiJjam9kNGs3MzMwczI2M3BwYjVtaXRpZ2l1In0.sxKzZ76nyy_PN8ETEnoKKA'
   }).addTo(mymap);
   var markers = new L.FeatureGroup();
+  function clearAllMarkers(){
+    markers.clearLayers();
+}
   $(".lost").on("click", function (event) {
-    getLostMapResults()
+    clearAllMarkers();
+    getLostMapResults();
     table.setData("/api/lostpets");
-    mapType="Lost"
+    mapType="Lost";
   })
   $(".found").on("click", function (event) {
+    clearAllMarkers();
     getFoundMapResults();
     table.setData("/api/pets");
-    mapType="Found"
+    mapType="Found";
   })
     mymap.addLayer(markers);
-    function clearAllMarkers(){
-      markers.clearLayers();
-  }
+    
   
   var table = new Tabulator("#tabulator-table", {
     height: "311px",
@@ -110,7 +113,11 @@ $(document).ready(function () {
     rowClick: function (e, row) {
       var rowClicked = row.getData();
       console.log(rowClicked.id)
-      let rowMapPoint = rowClicked.found_location.split(',')
+      if(mapType==="Found"){
+      let rowMapPoint = rowClicked.found_location.split(',')}
+      else if(mapType==="Lost"){
+      let rowMapPoint = rowClicked.lost_location.split(',')
+      }
       let rowmapPointParsed = [parseFloat(rowMapPoint[0]), parseFloat(rowMapPoint[1])]
       clearAllMarkers();
       if (rowClicked.type === "Dog") {
