@@ -170,6 +170,14 @@
                           </div>
                         </div>
                       </div><!--End of Second Row-->
+
+                      <div class="col-md-4">
+                        <div class="form-group selectpicker">
+                          <label class="label-control"></label>
+                          <input id="date-lost" required="" type="text" class="form-control text-center" placeholder="Date Lost" onfocus="(this.type='date')"/>
+                        </div>
+                      </div>
+
                       
                       <!--Photo upload-->
                       <div class="row upload">
@@ -211,6 +219,25 @@
       </div>
     </div>
   </div><!-- End Of Container Div-->
+
+  <div id="results-modal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h2 class="modal-title"><strong>Pet Details: </strong></h2>
+          </div>
+          <div class="modal-body">
+              <h2 class="name"><strong>Pet Name: </strong></h2>
+              <h4 class="type"><strong>Pet Name: </strong></h4>
+              <img id="img" src="" alt="">
+              <h4 class="quote"></h4>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="button btn modal-button btn-primary" data-dismiss="modal">Close</button>
+          </div>
+      </div>
+    </div>
+  </div>
   
   <!--Footer-->
   <footer class="footer footer-default">
