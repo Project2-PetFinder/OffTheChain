@@ -98,6 +98,7 @@ $(document).ready(function () {
     layout: "fitColumns",
     placeholder: "No Data Set",
     columns: [
+      { title: "Picture",field: "image_link", formatter:"image",align:"center",height:25,width :25},
       { title: "Name", field: "name", sorter: "string", headerFilter: "input" },
       { title: "Type", field: "type", align: "center", formatter: "string", headerFilter: "input" },
       { title: "Address Found", field: "Address", sorter: "string", width: 175 },
@@ -107,7 +108,7 @@ $(document).ready(function () {
       { title: "Color", field: "color", align: "center", formatter: "string", headerFilter: "input" },
       { title: "Sex", field: "sex", align: "center", formatter: "string", headerFilter: "input" },
       { title: "Age", field: "age", align: "center", formatter: "string", headerFilter: "input" },
-      { title: "Picture",field: "image_link", formatter:"image",align:"center",height:50,width :50},
+      
     ],
     
     
