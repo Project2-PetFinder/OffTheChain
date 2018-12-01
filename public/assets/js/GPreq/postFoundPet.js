@@ -96,6 +96,7 @@ $(document).ready(function () {
   
         $.post("/api/pets", foundPet,
           function (data) {
+           $(".foundName").text(data.name);
            $("#img").attr("src", data.image_link);
            $(".date_found").text(data.date );
            $(".locationFound").text(data.Address );
