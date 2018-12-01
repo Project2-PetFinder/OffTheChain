@@ -50,7 +50,7 @@ $(document).ready(function () {
       function (data) {
   
         for (var i = 0; i < data.length; i++) {
-          if (data[i].found_location) {
+          if (data[i].lost_location) {
             let mapPoint = data[i].lost_location.split(',')
             let mapPointParsed = [parseFloat(mapPoint[0]), parseFloat(mapPoint[1])]
             if (data[i].type === "Dog") {
