@@ -77,8 +77,4 @@ $(document).ready(function () {
         
         bindDatePicker();
     });
-
-
-    //Sex Dropdown Menu
-    
 });
