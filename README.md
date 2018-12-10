@@ -4,7 +4,7 @@
 
 ## Motivation
 
-> As pet owners who have personally lost pets, ourselves, and having to go through the very stressful process of being reunited with them, we decided that their must be an easier way to go about finding lost pets using the aid of the internet and online databases. Why waste hours upon hours posting flyers all over town when you can have an app do all the legwork for you?
+> As pet owners who have personally lost pets ourselves, and having to go through the very stressful process of being reunited with them, we decided that their must be an easier way to go about finding lost pets using the aid of the internet and online databases. Why waste hours upon hours posting flyers all over town when you can have an app do all the legwork for you?
 
 ## Tech/framework used
 
