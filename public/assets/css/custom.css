@@ -1,7 +1,7 @@
 #map {
-    width: 900px;
-    height: 500px;
-  }
+  width: 900px;
+  height: 500px;
+}
 
 .map-container {
   display: flex;
@@ -32,7 +32,7 @@ li:hover {
   margin-top: -6%;
 }
 
-.lost-form{
+.lost-form {
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -85,15 +85,17 @@ option {
 }
 
 img {
-	margin-left: 19%;
-	width: 280px;
-	height: 200PX;
+  margin-left: 19%;
+  width: 280px;
+  height: 200px;
 }
-#tabulator-table .tabulator-row table img{
-  border:2px solid #ccc;
-  height:50px;
+#tabulator-table .tabulator-row table img {
+  border: 2px solid #ccc;
+  height: 50px;
   width: 50px;
 }
-
-
-
+#tabulator-table .tabulator-cell img {
+  border: 2px solid #ccc;
+  height: 110px;
+  width: 125px;
+}
