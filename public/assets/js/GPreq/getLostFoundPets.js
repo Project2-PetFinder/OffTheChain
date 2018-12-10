@@ -124,7 +124,7 @@ $(document).ready(function() {
         title: "Address Found",
         field: "Address",
         sorter: "string",
-        width: 175
+        width: 190
       },
       {
         title: "At AAC?",
