@@ -110,7 +110,7 @@ $(document).ready(function() {
         title: "Picture",
         field: "image_link",
         formatter: "image",
-        width: 160
+        width: 135
       },
       {
         title: "Name",
