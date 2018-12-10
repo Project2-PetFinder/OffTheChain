@@ -127,7 +127,7 @@ $(document).ready(function() {
     } else {
       console.log("empty fields");
       if ($(".pet-name").val() == "") {
-        alert(" Please enter the pet name");
+        alert(" Please enter the pet name.");
       } else if (clickedIcon == "") {
         // dog.value == "" && cat.value == ""
         alert(" Please select the pet type");

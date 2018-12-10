@@ -128,7 +128,9 @@ $(document).ready(function() {
     } else {
       console.log("empty fields");
       if ($(".pet-name").val() == "") {
-        alert(" Please enter the pet name");
+        alert(
+          " Please enter the pet name. You may not know the pet name, in which case enter 'Unknown'. "
+        );
       } else if (clickedIcon == "") {
         alert(" Please select the pet type");
       } else {
