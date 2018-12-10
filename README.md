@@ -14,13 +14,12 @@
 - JavaScript
 - Bootstrap 4 Material Kit
 - Leaflet.js
+- Tabulator.js
 
 <b>Back-End</b>
 - Sequelize
 - Node.js
 - Express
-- API
-  - Austin Animal Center
   
 <b>Deployment</b>
 - [Heroku](https://offthechain-app.herokuapp.com/)
