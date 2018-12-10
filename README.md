@@ -17,6 +17,7 @@
 - Tabulator.js
 
 <b>Back-End</b>
+- MySQL Database
 - Sequelize
 - Node.js
 - Express
