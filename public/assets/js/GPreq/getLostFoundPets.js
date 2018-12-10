@@ -110,7 +110,7 @@ $(document).ready(function() {
         title: "Picture",
         field: "image_link",
         formatter: "image",
-        align: "center"
+        width: 145
       },
       { title: "Name", field: "name", sorter: "string", headerFilter: "input" },
       {
