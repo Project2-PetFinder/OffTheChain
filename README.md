@@ -1,21 +1,136 @@
-# Production
+# offTheChain
 
-1. Off the Chain: Helping you reconnect with your lost beloved furry friends. This application will let you post notices showing where you may have lost your pet, or allow you to post if you have found a companion who happened to lose their way. Using map data as well as pins, you can drop last known locations of your pet, or drop where pets were found allowing you to easily see where they were found.
+> The all in one app for connecting pet owners with their lost pets!
 
-2. MVP: WE need to have a map that constantly updates as the database changes with lost, or found pets as well as deletes them from the map and database as the pet is claimed or returned to its owner. We need an input form that validates input as proper for it's type, converting the lat/long into an address for the map. Seperate tables for lost pets and found pets
+## Motivation
 
-Sprint-1: Functional post and get request, route allowing functional posts to found pets showing on map, functional posts to lost pets showing on map, have table under map with data from posts
-Sprint-2: Have table updated with more and filterable with searech function, Matches to lost and found pets
+> As pet owners who have personally lost pets, ourselves, and having to go through the very stressful process of being reunited with them, we decided that their must be an easier way to go about finding lost pets using the aid of the internet and online databases. Why waste hours upon hours posting flyers all over town when you can have an app do all the legwork for you?
 
-3. We are using Leaflet library for our map data as well as icons, atx.gov open data for lost pets, AJAX request to convert lat/long to an address, and a MySQL to log pets that are lost and found, with this log being updated on the map, tabulate for further table expandability
+## Tech/framework used
 
-4. Mark: Theme and front end things. Ritika and James have started on the database end.
+<b>Front-End</b>
+- HTML5
+- CSS
+- JavaScript
+- Bootstrap 4 Material Kit
+- Leaflet.js
+
+<b>Back-End</b>
+- Sequelize
+- Node.js
+- Express
+- API
+  - Austin Animal Center
+  
+<b>Deployment</b>
+- [Heroku](https://offthechain-app.herokuapp.com/)
+  
+## Team Members
+1. [James Tobey](https://github.com/jctobey)
+2. [Ritika](https://github.com/Ritikawesome)
+3. [Mark Mayfield](https://github.com/themarcusaurelius)
+
+## Demo
+- [Landing-Page](https://offthechain-app.herokuapp.com/)
+
+![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
+
+- [Lost-Pet](https://offthechain-app.herokuapp.com/lost-form.html)
+
+![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
+
+- [Found-Pet](https://offthechain-app.herokuapp.com/found-form.html)
+
+![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
+
+- [Search Database](https://offthechain-app.herokuapp.com/map-results.html)
+
+![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
+
+- [Team-Page](https://offthechain-app.herokuapp.com/team.html)
+
+![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
+
+## File Structure
+> How the files and directories are setup
 
 
-Coding is fun and stuff yadayada
-
-
-Blah Blah
+```
+offTheChain
+.
+├── config
+│   ├── config.json
+│   └── connection.js
+|
+├── models
+│   ├── foundPet.js
+│   ├── index.js
+│   └── lostPet.js
+|
+├── public
+|   ├── assets
+|   │   ├── css
+|   │   │   ├── custom.css
+|   │   │   ├── material-kit.css
+|   │   │   ├── material-kit.css.map
+|   │   │   └── material.kit.min.css
+|   │   ├── img
+|   │   │   ├── faces
+|   │   │   |   ├── james.jpg
+|   |   |   |   ├── mark1.jpeg
+|   │   │   |   └── ritika.jpg
+|   |   |   ├── animalBanner.jpg
+|   |   |   |   |── animalBanner1.jpg
+|   |   |   |   ├── catDog.jpg
+|   |   |   |   └── city-profile.jpg
+|   |   |   ├── dog-wallpaper-3.jpg
+|   |   |   ├── dog.jpg
+|   |   |   ├── dog.png
+|   |   |   ├── dogPic.jpg
+|   |   |   ├── found.jpg
+|   |   |   ├── foundPage.jpg
+|   |   |   ├── kittay.png
+|   |   |   ├── lostPage.jpg
+|   |   |   ├── mapPage.jpg
+|   |   |   ├── resultsPage.jpg
+|   │   │   └── teamPage.jpg
+|   |   ├── js
+|   |   |   ├── GPreq
+|   |   |   |   ├── getLostFoundPets.js
+|   |   |   |   ├── postFoundPets.js
+|   |   |   |   └── postLostPets.js
+|   |   |   ├── dropZone.js
+|   |   |   ├── lost-found.js
+|   |   |   ├── material-kit.js
+|   |   |   ├── material-kit.js.map
+|   |   |   └── script.js
+|   │   ├── scss
+|   │   |   ├── material-kit
+|   │   |   │   ├── bootstrap
+|   |   |   |   ├── cards
+|   |   |   |   ├── mixins
+|   |   |   |   ├── plugins
+|   |   |   |   ├── plugins
+|   │   |   │   └── variables
+|   ├── found-form.html
+|   ├── landing-page.html
+|   ├── lost-form.html
+|   ├── map-results.html
+|   └── team.html
+|
+├── routes
+|   ├── foundPet-api-routes.js
+|   ├── html-routes.js
+|   └── lostPet-api-routes.js
+|
+├── .gitignore
+├── gulpfile.js
+├── package-lock.json
+├── package.json
+├── README.md
+└── server.js
+    
+```
 
 
 
