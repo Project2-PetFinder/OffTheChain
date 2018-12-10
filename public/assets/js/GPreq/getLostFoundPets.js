@@ -58,12 +58,12 @@ $(document).ready(function() {
           if (data[i].type === "Dog") {
             marker = new L.marker(mapPointParsed, {
               icon: doggyIcon
-            }).bindPopup(String(data[i].Name));
+            }).bindPopup(String(data[i].name));
             markers.addLayer(marker);
           } else if (data[i].type === "Cat") {
             marker = new L.marker(mapPointParsed, {
               icon: kittayIcon
-            }).bindPopup(String(data[i].Name));
+            }).bindPopup(String(data[i].name));
             markers.addLayer(marker);
           }
         }
@@ -110,9 +110,15 @@ $(document).ready(function() {
         title: "Picture",
         field: "image_link",
         formatter: "image",
-        width: 155
+        width: 160
       },
-      { title: "Name", field: "name", sorter: "string", headerFilter: "input" },
+      {
+        title: "Name",
+        field: "name",
+        sorter: "string",
+        headerFilter: "input",
+        align: "center"
+      },
       {
         title: "Type",
         field: "type",
