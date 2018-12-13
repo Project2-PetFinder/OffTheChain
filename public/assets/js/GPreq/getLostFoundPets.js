@@ -203,10 +203,6 @@ $(document).ready(function() {
     }
   });
 
-  $(window).on("resize", function() {
-    $("#tabulator-table").tabulator("redraw");
-  });
-
   function onMapClick(e) {
     marker.openPopup();
   }
