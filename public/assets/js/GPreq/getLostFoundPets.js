@@ -104,7 +104,8 @@ $(document).ready(function() {
   var table = new Tabulator("#tabulator-table", {
     height: "311px",
     layout: "fitColumns",
-    placeholder: "No Data Set",
+    responsiveLayout: "hide",
+    placeholder: "Select Lost or Found",
     columns: [
       {
         title: "Picture",
@@ -200,6 +201,10 @@ $(document).ready(function() {
       }
       $(".reset").show();
     }
+  });
+
+  $(window).on("resize", function() {
+    $("#tabulator-table").tabulator("redraw");
   });
 
   function onMapClick(e) {
