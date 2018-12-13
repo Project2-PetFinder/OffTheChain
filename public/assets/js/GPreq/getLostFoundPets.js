@@ -104,7 +104,8 @@ $(document).ready(function() {
   var table = new Tabulator("#tabulator-table", {
     height: "311px",
     layout: "fitColumns",
-    placeholder: "No Data Set",
+    responsiveLayout: "hide",
+    placeholder: "Select Lost or Found",
     columns: [
       {
         title: "Picture",
@@ -177,6 +178,11 @@ $(document).ready(function() {
     rowClick: function(e, row) {
       var rowClicked = row.getData();
       console.log(rowClicked.id);
+      $(".foundName").text(rowClicked.name);
+      $("#imgMap").attr("src", rowClicked.image_link);
+      $(".date_found").text(rowClicked.date);
+      $(".locationFound").text(rowClicked.Address);
+      $("#map-modal").modal("toggle");
       if (mapType === "Found") {
         rowMapPoint = rowClicked.found_location.split(",");
       } else if (mapType === "Lost") {
