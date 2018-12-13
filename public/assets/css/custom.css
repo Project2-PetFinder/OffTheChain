@@ -100,3 +100,6 @@ img {
   width: 125px;
   margin-left: 0%;
 }
+#map-modal img {
+  margin-left: 0%;
+}
