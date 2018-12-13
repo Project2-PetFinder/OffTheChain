@@ -178,6 +178,11 @@ $(document).ready(function() {
     rowClick: function(e, row) {
       var rowClicked = row.getData();
       console.log(rowClicked.id);
+      $(".foundName").text(rowClicked.name);
+      $("#img").attr("src", rowClicked.image_link);
+      $(".date_found").text(rowClicked.date);
+      $(".locationFound").text(rowClicked.Address);
+      $("#map-modal").modal("toggle");
       if (mapType === "Found") {
         rowMapPoint = rowClicked.found_location.split(",");
       } else if (mapType === "Lost") {
