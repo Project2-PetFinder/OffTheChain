@@ -103,3 +103,6 @@ img {
 #map-modal img {
   margin-left: 0%;
 }
+.leaflet-tile-loaded {
+  position: absolute;
+}

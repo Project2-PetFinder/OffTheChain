@@ -1,4 +1,20 @@
 $(document).ready(function() {
+  var alterClass = function() {
+    var ww = $(window).width();
+    if (ww <= 1000) {
+      $(".page-header").attr("hidden", true);
+      console.log("mobile responsive!");
+    } else {
+      $(".page-header").attr("hidden", false);
+    }
+  };
+  $(window).resize(function() {
+    alterClass();
+  });
+  //Fire it when the page first loads:
+  alterClass();
+  console.log(document.body.clientWidth);
+
   mapType = "";
   $(".reset").hide();
   var kittayIcon = L.icon({
