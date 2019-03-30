@@ -33,7 +33,7 @@
 ## Demo
 - [](https://giant.gfycat.com/BlindHomelyAntbear.gif)
 
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
+![Recordit GIF](https://giant.gfycat.com/BlindHomelyAntbear.gif)
 
 
 
