@@ -3,7 +3,6 @@
 > The all in one app for connecting pet owners with their lost pets!
 
 ## Demo
-- [](https://giant.gfycat.com/BlindHomelyAntbear.gif)
 
 ![Recordit GIF](https://giant.gfycat.com/BlindHomelyAntbear.gif)
 
