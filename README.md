@@ -31,25 +31,11 @@
 3. [Mark Mayfield](https://github.com/themarcusaurelius)
 
 ## Demo
-- [Landing-Page](https://offthechain-app.herokuapp.com/)
+- [](https://giant.gfycat.com/BlindHomelyAntbear.gif)
 
 ![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
 
-- [Lost-Pet](https://offthechain-app.herokuapp.com/lost-form.html)
 
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
-
-- [Found-Pet](https://offthechain-app.herokuapp.com/found-form.html)
-
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
-
-- [Search Database](https://offthechain-app.herokuapp.com/map-results.html)
-
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
-
-- [Team-Page](https://offthechain-app.herokuapp.com/team.html)
-
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
 
 ## File Structure
 > How the files and directories are setup
