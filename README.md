@@ -2,6 +2,11 @@
 
 > The all in one app for connecting pet owners with their lost pets!
 
+## Demo
+- [](https://giant.gfycat.com/BlindHomelyAntbear.gif)
+
+![Recordit GIF](https://giant.gfycat.com/BlindHomelyAntbear.gif)
+
 ## Motivation
 
 > As pet owners who have personally lost pets ourselves, and having to go through the very stressful process of being reunited with them, we decided that their must be an easier way to go about finding lost pets using the aid of the internet and online databases. Why waste hours upon hours posting flyers all over town when you can have an app do all the legwork for you?
@@ -29,12 +34,6 @@
 1. [James Tobey](https://github.com/jctobey)
 2. [Ritika](https://github.com/Ritikawesome)
 3. [Mark Mayfield](https://github.com/themarcusaurelius)
-
-## Demo
-- [](https://giant.gfycat.com/BlindHomelyAntbear.gif)
-
-![Recordit GIF](https://giant.gfycat.com/BlindHomelyAntbear.gif)
-
 
 
 ## File Structure
